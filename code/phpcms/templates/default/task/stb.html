@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TV</title>
+<link rel="stylesheet" type="text/css" href="{TASK_PATH}stb/css/css.css"/>
+<script type="text/javascript" src="{TASK_PATH}js/jquery-1.4.1.min.js"></script>
+
+<script src="{TASK_PATH}js/jQuery-1.7.1.js" language="javascript" type="text/javascript"></script>
+<script src="{TASK_PATH}js/jQuery-easing.js" language="javascript" type="text/javascript"></script>
+<script src="{TASK_PATH}js/jQuery-jcImgScroll.js" language="javascript" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+<!-- 
+$(function(){
+	$("#demo1").jcImgScroll({
+		count : 3,
+		title:true
+	});
+	/*
+	$("#demo3").jcImgScroll({
+		arrow : {
+			width:110,	
+			height:288,
+			x:220,
+			y:0
+		},
+		count : 3,
+		offsetX : 140,
+		NumBtn : true,
+		title:false
+	});
+	*/
+});
+-->
+</script>
+</head>
+
+<body>
+<div class="tv_wrap">
+	<div class="tv_top">
+    	<div class="tv_logo"><img src="{TASK_PATH}stb/images/logo3.png" /></div>
+        <div class="tv_pmd productshow">
+		<!-- 今日更新跑马灯 start -->
+		{if $videoTask['posidAdOne']}
+			<marquee scrollamount="3">			
+			{loop $videoTask['posidAdOne'] $row}
+			<a  href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}</a> &nbsp; 
+			{/loop}			
+			</marquee>
+		{/if}
+		<!-- 今日更新跑马灯 end -->
+		</div>
+    </div>
+	<!-- 首页滚动 start -->
+	{if $videoTask['posidOne']}
+    <div class="tv_focus">
+    	<div id="demo1" class="jcImgScroll">
+            <ul>
+			{loop $videoTask['posidOne'] $row}
+				<li><a href="{$row['videoPlayUrl']}" path="{$row['videoImg']}" title="{$row['videoTitle']}" target="_blank"></a></li>
+			{/loop}
+             </ul>
+        </div>
+  	</div>
+	{/if}
+	<!-- 首页滚动 end -->
+
+	<div class="tv_lst1 clearfix marL">
+		<!-- 电视剧 start -->
+		{if $videoTask['posidSix']}
+				<div class="tv_tab_big"><a href="###" ><img src="{TASK_PATH}stb/images/navigate_btv.png" id="6"/></a></div>
+		{/if}
+		<!-- 电视剧 end -->
+
+		<!-- 电影 start -->
+		{if $videoTask['posidFive']}
+				<div class="tv_tab_big"><a href="###" ><img src="{TASK_PATH}stb/images/navigate_hot_move.png" id="5"/></a></div>
+		{/if}
+		<!-- 电影 end -->
+
+		<!-- 电视栏目 start -->
+		{if $videoTask['posidFour']}
+				<div class="tv_tab_big"><a href="###" ><img src="{TASK_PATH}stb/images/navigate_fine_column.png" id="4"/></a></div>
+		{/if}
+		<!-- 电视栏目 end -->
+
+		<!-- 今日更新 start -->
+		{if $videoTask['posidThree']}
+				<div class="tv_tab_big"><a href="###" ><img src="{TASK_PATH}stb/images/navigate_today_update.png" id="3" /></a></div>
+		{/if}
+		<!-- 今日更新 end -->
+
+		<!-- 文字区 start -->
+		{if $videoTask['posidTwo']}
+				<div class="tv_tab_big"><a href="###" ><img src="{TASK_PATH}stb/images/navigate_hit_seriese.png" id="2"/></a></div>
+		{/if}
+		<!-- 文字区 end -->
+
+		<!-- 乐酷 start -->
+		{if $videoTask['posidSeven']}
+				<div class="tv_tab_big"><a href="###" ><img src="{TASK_PATH}stb/images/navigate_le_cool.png" id="7"/></a></div>
+		{/if}
+		<!-- 乐酷 end -->
+
+		<!-- 
+				<div class="tv_tab_big"><a href="###" ><img src="{TASK_PATH}stb/images/navigate_mybigtv.png" id="1"/></a></div>  
+		 -->
+		
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$(".tv_lst2").hide();
+			$(".tv_lst2:first").show();
+			$(".tv_lst1 img").click(function(){
+				//内容 start
+				$(".tv_lst2").hide();
+				$("#park_"+this.id).show();
+				//内容 end		
+
+				//$(this).toggleClass("here");	//重新设置当前焦点样式
+			});
+		});
+		</script>
+	 </div>
+
+	<!-- 电视剧data start -->
+	{if $videoTask['posidSix']}
+	  <div class="tv_lst2 clearfix" id="park_6" >
+			{loop $videoTask['posidSix'] $row}
+			<div class="tv_box"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}</a></div>
+			{/loop}
+		</div>
+	{/if}
+	<!-- 电视剧data end -->
+
+	<!-- 电影data start -->
+	{if $videoTask['posidFive']}
+		<div class="tv_lst2 clearfix" id="park_5" >
+			{loop $videoTask['posidFive'] $row}
+			<div class="tv_box"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}</a></div>
+			{/loop}
+		</div>
+	{/if}
+	<!-- 电影data end -->
+
+	<!-- 电视栏目data start -->
+	{if $videoTask['posidFour']}
+		<div class="tv_lst2 clearfix" id="park_4" >
+			{loop $videoTask['posidFour'] $row}
+			<div class="tv_box"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}</a></div>
+			{/loop}
+		</div>
+	{/if}
+	<!-- 电视栏目data end -->
+
+	<!-- 今日更新data start -->
+	{if $videoTask['posidThree']}
+		<div class="tv_lst2 clearfix" id="park_3" >
+			{loop $videoTask['posidThree'] $row}
+			<div class="tv_box"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}</a></div>
+			{/loop}
+		</div>
+	{/if}
+	<!-- 今日更新data end -->
+
+	<!-- 文字区data start -->
+	{if $videoTask['posidTwo']}
+		  <div class="tv_lst2 clearfix" id="park_2" >
+			{loop $videoTask['posidTwo'] $row}
+			<div class="tv_box"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}</a></div>
+			{/loop}
+		</div>
+	{/if}
+	<!-- 文字区data end -->
+
+	<!-- 乐酷data start -->
+	{if $videoTask['posidSeven']}
+		  <div class="tv_lst2 clearfix" id="park_7" >
+			{loop $videoTask['posidSeven'] $row}
+			<div class="tv_box"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}</a></div>
+			{/loop}
+		</div>
+	{/if}
+	<!-- 乐酷data end -->
+
+</div>
+</body>
+</html>

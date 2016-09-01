@@ -1,0 +1,55 @@
+<?php return array (
+  '__ex__' => 1403694386,
+  'data' => 
+  array (
+    'type' => 
+    array (
+      'name' => '应用市场',
+      'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/7po/channel/app/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+    ),
+    'cate' => 
+    array (
+      0 => 
+      array (
+        't' => 
+        array (
+          'name' => '应用市场',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/7po/channel/app/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '影视音乐',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/7po/channel/app/category/%25E5%25BD%25B1%25E8%25A7%2586%25E9%259F%25B3%25E4%25B9%2590/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '游戏娱乐',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/7po/channel/app/category/%25E6%25B8%25B8%25E6%2588%258F%25E5%25A8%25B1%25E4%25B9%2590/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '教育学习',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/7po/channel/app/category/%25E6%2595%2599%25E8%2582%25B2%25E5%25AD%25A6%25E4%25B9%25A0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '日常生活',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/7po/channel/app/category/%25E6%2597%25A5%25E5%25B8%25B8%25E7%2594%259F%25E6%25B4%25BB/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '系统工具',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/7po/channel/app/category/%25E7%25B3%25BB%25E7%25BB%259F%25E5%25B7%25A5%25E5%2585%25B7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '网络社交',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/7po/channel/app/category/%25E7%25BD%2591%25E7%25BB%259C%25E7%25A4%25BE%25E4%25BA%25A4/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+    ),
+  ),
+);

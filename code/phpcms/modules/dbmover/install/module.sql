@@ -1,0 +1,1 @@
+INSERT INTO `phpcms_module` (`module`, `name`, `url`, `iscore`, `version`, `description`, `setting`, `listorder`, `disabled`, `installdate`, `updatedate`) VALUES ('dbmover', '数据同步', 'dbmover/', 0, '1.0', '数据同步', '', 0, 0, '2012-10-20', '2012-10-20');

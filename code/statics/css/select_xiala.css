@@ -1,0 +1,33 @@
+.dys {
+ position:absolute;
+ z-index:5;
+ left:111px;
+ width:18px;
+ overflow:hidden;
+}
+.dys select {
+ margin-left:-111px;
+ width:125px;
+height:24px;
+}
+.dyw {
+ position:absolute;
+ z-index:4;
+ #top:-1px;
+}
+.dyw input {
+ width:113px;
+ voice-family:"\"}\"";
+ voice-family:inherit;
+ width:110px;
+ #width:107px;
+}
+.cancel{
+	margin-left: 60px;
+	border: 1px solid;
+	padding: 7px 13px;
+	border-radius: 16px !important;
+	background: #3598dc;
+	color: white;
+	font-size: 14px;
+}

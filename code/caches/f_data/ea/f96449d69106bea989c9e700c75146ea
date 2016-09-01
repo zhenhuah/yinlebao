@@ -1,0 +1,15 @@
+<?php return array (
+  '__ex__' => 1397202048,
+  'data' => 
+  array (
+    'type' => NULL,
+    'cate' => 
+    array (
+      0 => 
+      array (
+        't' => NULL,
+        'l' => NULL,
+      ),
+    ),
+  ),
+);

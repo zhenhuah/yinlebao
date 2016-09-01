@@ -1,0 +1,927 @@
+<?php
+if(!defined('PHPCMS_PATH')) die('define PHPCMS_PATH') ;
+require_once PHPCMS_PATH . 'phpcms/libs/yinclude/bigtvm_common.php' ;
+yzy_sooner_db() ;
+
+//发布菜单
+function ypublish_get_atlist(){
+	return array(
+		'video'			 =>'视频上线',
+		'off_video'		 =>'视频下线',
+		'del_video'		 =>'视频删除',
+		'channel'		 =>'频道上线',
+		'channelepg'	 =>'EPG上线',
+		'tags_area'		 =>'地区',
+		'tags_cate'		 =>'栏目分类',
+		'tags_year'		 =>'年代',
+		'client_online'  =>'客户端上线',
+		'client_delete'  =>'客户端删除',
+		'pre_adverts' 	 =>'广告位',
+		'pre_task'       =>'推荐位',
+	) ;
+}
+
+//发布菜单对应的主键
+function ypublish_get_atlist_id(){
+	return array(
+		'video'			 =>'asset_id',
+		'off_video'		 =>'asset_id',
+		'del_video'		 =>'asset_id',
+		'channel'		 =>'channel_id',
+		'channelepg'	 =>'epgid',
+		'tags_area'		 =>'id',
+		'tags_cate'		 =>'id',
+		'tags_year'		 =>'id',
+		'client_online'  =>'id',
+		'client_delete'  =>'id',
+		'pre_adverts'    =>'adId',
+		'pre_task' 	 	 =>'taskId',
+	) ;
+}
+
+//获取数据来源表
+function ypublish_get_off_or_online_table($mtype){
+	//针对视频属性三个操作同一张表的特殊情况做处理
+	if( in_array($mtype, array('tags_cate','tags_area','tags_year')) ){
+		return 'v9_tags';
+	//针对客户端上线和删除操作同一张表的特殊情况做处理
+	}elseif( in_array($mtype, array('client_online','client_delete')) ){
+		return 'v9_client_version';
+	//针对推荐视频
+	}else{
+		if(ypublish_get_off_del_online_s($mtype)) return 'v9_' . substr($mtype,4) ;
+		return 'v9_' . $mtype;
+	}
+}
+
+//排序
+function ypublish_get_off_or_online_order($mtype){
+	if(strpos($mtype,'pre_adverts') === 0){
+		return 'ORDER BY adId DESC';
+	}elseif (strpos($mtype,'pre_task') === 0){
+		return 'ORDER BY taskId DESC';
+	}else{
+		return 'ORDER BY id DESC' ;
+	}
+}
+
+//上线下线where
+function ypublish_get_off_or_online_where($mtype){
+	$tmp = ypublish_get_off_del_online_s($mtype) ;
+	$where = array() ;
+	
+	if($tmp == 0 && $mtype != 'adverts' ){
+		$where = array('online_status'=>11,'published'=>'0') ;
+	}else if($tmp == 1){
+		$where = array('offline_status'=>2,'published'=>'1') ;
+	}else if($tmp == 2){
+		$where = array('online_status'=>21) ;
+	}
+	
+	if(strpos($mtype,'channel') === 0) {
+		return $where ;
+	}
+	
+	if(strpos($mtype,'pre_adverts') === 0) {
+		$where = array('adStatus'=>'4') ;
+	}
+	
+	if(strpos($mtype,'pre_task') === 0) {
+		$where = array('taskStatus'=>'4') ;
+	}
+	
+	//控制是否具有 spid
+	if( !in_array($mtype, array('tags_area', 'tags_cate', 'tags_year', 'client_online', 'client_delete'))){
+		$where['spid'] = get_spid_by_sid() ;
+	}
+	
+	//为视频属性 地区、栏目、年份 增加属性
+	if( in_array($mtype, array('tags_area', 'tags_cate', 'tags_year'))){
+		$where['type'] = get_tags_type_by_mtype($mtype);
+	}
+	
+	if(defined('IN_CRONTAB') && IN_CRONTAB) {
+		return $where ;
+	}
+
+	return $where ;
+
+}
+
+//处理视频属性栏目、地域、年份的type
+function get_tags_type_by_mtype($mtype){
+	if($mtype == 'tags_area'){
+		$type = '1';
+	}else if($mtype == 'tags_cate'){
+		$type = '2';
+	}else if($mtype == 'tags_year'){
+		$type = '3';
+	}
+	return $type;
+}
+
+
+//上下线取消where
+function ypublish_get_canc_off_or_online_where($mtype){
+	
+	//处理特殊的推荐位情况
+	if($mtype == 'pre_task') return array('taskStatus'=>'3');
+	
+	$tmp = ypublish_get_off_del_online_s($mtype) ;
+	
+	//上线申请取消
+	if($tmp == 0) return array('online_status'=>'12') ;
+	
+	//下线申请取消
+	if($tmp == 1) return array('offline_status'=>'0') ;
+	
+	//删除申请取消
+	if($tmp == 2) return array('online_status'=>'2') ;
+}
+
+
+//日志操作中的文字
+function ypublish_get_off_or_online_txt($mtype){
+	$s = array('上线','下线','删除') ;
+	return $s[ypublish_get_off_del_online_s($mtype)] ;
+}
+
+//上下线状态定义
+function ypublish_get_off_del_online_s($mtype){
+	if(strpos($mtype,'off_') === 0) return 1 ;
+	if(strpos($mtype,'del_') === 0) return 2 ;
+	if(strpos($mtype,'client_online') === 0) return 1 ;
+	if(strpos($mtype,'client_delete') === 0) return 2 ;
+	return 0 ;
+}
+
+//发布频道
+function __do_publish_to_channel($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb = yzy_go3c_db() ;
+
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+
+	//已发布状态
+	if(!in_array($r['published'],array('0','3'))) return ;
+
+	//增加计数器
+	$sumcount++ ;
+
+	$r['channel_id'] = intval($r['channel_id']) ;
+	$d = array(
+		'channel_name' => $r['title'],
+		'category_id'  => $r['channel_category'],
+		'seq_number'   => $r['listorder'],
+		'aspect_ratio'      => ($r['iswidth']=='1600:900' || $r['iswidth']=='16:9')?'16:9':'4:3'
+	);
+	$tmpr = $go3cdb->w('channel',$d,array('channel_id'=>$r['channel_id'])) ;
+	if(!$tmpr){
+		$d['channel_id'] = $r['channel_id'];
+		$go3cdb->w('channel',$d);
+	}
+
+	$h_uuids = array(1 => "uuidSTB_HIGH",2 => "uuidIOS_HIGH",3 => "uuidIOS_HIGH",4 => "uuidPC_HIGH");
+	$m_uuids = array(1 => "uuidSTB_MEDIUM",2 => "uuidIOS_MEDUIM",3 => "uuidIOS_MEDUIM",4 => "uuidPC_MEDIUM");
+
+	foreach($h_uuids as $k=>$v){
+		$dd = array(
+			'list_img_url' => $r['img'],
+			'details_img_url' => $r['imgpath']
+		);
+		$tmpr = $go3cdb->w('channel_image',$dd,array('channel_id'=>$r['channel_id'],'term_id'=> $k)) ;
+		if(!$tmpr){
+			$dd['channel_id'] = $r['channel_id'] ;
+			$dd['term_id'] = $k;
+			$go3cdb->w('channel_image',$dd) ;
+		}
+
+		if($r[$h_uuids[$k]]){
+			$dd = array(
+				'channel_id' => intval($r['channel_id']),
+				'term_id' => $k,
+				'quality' => '3',
+				'uuid' => $r[$h_uuids[$k]],
+			);
+			$tmpr = $go3cdb->w('channel_play_info',array(
+				'uuid' => $r[$h_uuids[$k]]),array(
+					'channel_id' => intval($r['channel_id']),
+					'term_id' => $k,
+					'quality' => '3'
+				)
+			);
+			if(!$tmpr){
+				$go3cdb->w('channel_play_info',$dd) ;
+			}
+		}
+
+		if($r[$m_uuids[$k]]){
+			$dd = array(
+				'channel_id' =>  $r['channel_id'] ,
+				'term_id' => $k,
+				'quality' => '2',
+				'uuid' => $r[$m_uuids[$k]],
+			);
+			$tmpr = $go3cdb->w('channel_play_info',array(
+				'uuid' => $r[$h_uuids[$k]]),array(
+					'channel_id' => intval($r['channel_id']),
+					'term_id' => $k,
+					'quality' => '2'
+				)
+			);
+			if(!$tmpr){
+				$go3cdb->w('channel_play_info',$dd) ;
+			}
+		}
+	}
+
+	$phpcmsdb->w('v9_channel',array('published'=>1), array('id'=>$r['id'])) ;
+}
+
+//发布EPG
+function __do_publish_to_channelepg($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb = yzy_go3c_db() ;
+
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+
+	//已发布状态
+	if(!in_array($r['published'],array('0','3'))) return ;
+
+	//增加计数器
+	$sumcount++ ;
+
+	$d = array(
+		'channel_id'  => intval($r['channel_id']),
+		'title' 	  => $r['text'],
+		'img' 	      => $r['url'],
+		'description' => '',
+		'start_time'  => $r['starttime'],
+		'end_time'    => $r['endtime']
+	);
+	$go3cdb->w('epg',$d);
+	$phpcmsdb->w('v9_channelepg',array('published'=>1), array('id'=>$r['id'])) ;
+}
+
+
+//发布视频
+function __do_publish_to_video($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb = yzy_go3c_db() ;
+	
+	/**
+	 * 调试代码 无效
+	 */
+/*	$total_episodes_sql = "SELECT MAX(episode_number) AS episode_number, name FROM all_episode_list WHERE 1 and parent_id = '$r[parent_id]'";
+	$total_episodes 	= $go3cdb->rs($total_episodes_sql) ;
+	$d['parent_id'] 	=  $r['parent_id'];
+	echo $total_episodes_sql;
+	print_r($total_episodes);
+	exit;*/
+	
+	//算出发布日期的时间戳
+	$r['pub_date_time'] = strtotime($r['pub_date']);
+	
+	//如果发布日期大于等于当前日期的时间戳，允许发布 未指定时间的都发布
+	if( $r['pub_date'] == '0000-00-00' || $r['pub_date_time'] <= time()){
+	
+		static $sumcount ;
+		if(!isset($sumcount)) $sumcount = 0 ;
+		if($r == 'getsumcount') return $sumcount ;
+	
+		//已发布状态
+		if(!in_array($r['published'],array('0','3'))) return ;
+	
+		//增加计数器
+		$sumcount++ ;
+	
+		$rd = $phpcmsdb->r1('v9_video_data',array('id'=>$r['id'])) ;
+	
+		//随机算出一个播放数
+		$play_count = rand(50, 200);
+		
+		$d = array(
+			'vid' =>   $r['asset_id'],
+			'aspect' =>   $r['aspect'],
+			'name' =>  $r['title'],
+			'uploader' =>  trim($r['uploader']),
+			'column_id' => intval($r['column_id']),
+			'short_desc' => $rd['short_desc'],
+			'long_desc' => $rd['long_desc'],
+			'active' => $r['active'],
+			'time_created'=> date('Y-m-d H:i:s',$r['inputtime']),
+			'time_updated'=> date('Y-m-d H:i:s',$r['updatetime']),
+			'created_by' => 'root',
+			'play_count' => $play_count,
+			'area_id' => $r['area_id'],
+			'director' =>  $r['director'],
+			//'source_id' =>  $r['source_id'],
+			'is_free'  =>  $r['is_free'],
+			'run_time' =>  $r['run_time'],
+			'year_released' =>  $r['year_released'],
+			//'total_episodes' =>  $r['total_episodes'],
+			//'parent_id' =>  $r['parent_id'],
+			//'episode_number' =>  $r['episode_number'],
+			//'latest_episode_number' =>  $r['latest_episode_num']
+			'spid'	=> $r['spid']
+		);
+		
+		/**
+		 * 当前是发布的总集的时候，那就 latest_episode_number编辑写什么值就发布什么值
+		 * 当前发布的是一个分集的时候，首先把分集的总集id查出来，然后根据总集id去查总集下最新的那个集数（max），然后再去更新总集的latest_episode_number
+		 */
+		if($r['parent_id']){
+			
+			//更新总集的latest_episode_number
+			$latest_episode_number_sql  = "SELECT MAX(episode_number) AS episode_number, name FROM all_episode_list WHERE 1 and parent_id = '$r[parent_id]'";
+			$latest_episode_number 	    = $go3cdb->rs($latest_episode_number_sql) ;
+			$d['latest_episode_number'] = $latest_episode_number[0]?($latest_episode_number[0]['episode_number'] ? $latest_episode_number[0]['episode_number'] : 0):0;
+			if($r['episode_number']){
+				$d['latest_episode_number'] = max(intval($r['episode_number']),intval($d['latest_episode_number']));
+			}
+			//修改本地phpcms的数据
+			$phpcmsdb->w('v9_video',array('latest_episode_number'=>$d['latest_episode_number']), array('asset_id'=>$r['parent_id'])) ;
+			$go3cdb->w('video',array('latest_episode_number'=>$d['latest_episode_number']), array('vid'=>$r['parent_id'])) ;
+			
+			if($r['column_id'] == '3'){
+				//针对电视栏目更新总集的total_episodes
+				$total_episodes_sql  = "SELECT COUNT(*)  FROM video WHERE 1 and parent_id = '$r[parent_id]'";
+				$total_episodes 	 = $go3cdb->rs($total_episodes_sql) ;
+
+				$d['total_episodes'] = $total_episodes[0]?($total_episodes[0]['COUNT(*)'] ? (1+$total_episodes[0]['COUNT(*)']) : 0):0;
+				//修改本地phpcms的数据
+				$phpcmsdb->w('v9_video',array('total_episodes'=>$d['total_episodes']), array('asset_id'=>$r['parent_id'])) ;
+				$go3cdb->w('video',array('total_episodes'=>$d['total_episodes']), array('vid'=>$r['parent_id'])) ;
+			}
+			
+			$d['parent_id'] = $r['parent_id'];	
+			
+		}else{
+			
+			$d['latest_episode_number'] =  $r['latest_episode_number'];
+			$d['total_episodes'] 	 	=  $r['total_episodes'];
+			
+		}
+		
+		if($r['episode_number']){
+			$d['episode_number'] =  $r['episode_number'];
+		}
+			
+		$go3cdb->w('video',$d) ;
+		
+		
+		//增加插入评分
+		$r['rating'] = intval($r['rating']) ? intval($r['rating']) : rand(2,6);
+		$dd_rating = array(
+			'user_id' 	  => 'system',
+			'vid' 		  => $r['asset_id'],
+			'rating'	  => $r['rating'],
+			'rating_time' => date('Y-m-d H:i:s', time()),
+		);
+		$go3cdb->w('rating',$dd_rating) ;
+		
+		
+		//视频支持终端控制STB 先清理，再添加
+		$go3cdb->d('video_play_control',array('vid'=>$r['asset_id'], 'term_id'=>'1')) ;
+		$STB = array(
+			'vid' => $r['asset_id'],
+			'term_id' => '1',
+			'allow_play' => intval($r['STB'])
+		);
+		$go3cdb->w('video_play_control',$STB) ;
+	
+		//视频支持终端控制PHONE
+		$go3cdb->d('video_play_control',array('vid'=>$r['asset_id'], 'term_id'=>'2')) ;
+		$PHONE = array(
+			'vid' => $r['asset_id'],
+			'term_id' => '2',
+			'allow_play' => intval($r['PHONE'])
+		);
+		$go3cdb->w('video_play_control',$PHONE) ;
+	
+		//视频支持终端控制PAD
+		$go3cdb->d('video_play_control',array('vid'=>$r['asset_id'], 'term_id'=>'3')) ;
+		$PAD = array(
+			'vid' => $r['asset_id'],
+			'term_id' => '3',
+			'allow_play' => intval($r['PAD'])
+		);
+		$go3cdb->w('video_play_control',$PAD) ;
+	
+		//视频支持终端控制PC
+		$go3cdb->d('video_play_control',array('vid'=>$r['asset_id'], 'term_id'=>'4')) ;
+		$PC = array(
+			'vid' => $r['asset_id'],
+			'term_id' => '4',
+			'allow_play' => intval($r['PC'])
+		);
+		$go3cdb->w('video_play_control',$PC) ;	
+		
+		//增加tag
+		$r['tag'] = str_replace('，',',',$r['tag']) ;
+		$tags = explode(',',$r['tag']) ;
+		$atags = $go3cdb->r('tag',array('tag_name'=>$tags),'tag_id,tag_name',array('key_value'=>'tag_name,tag_id')) ;
+	
+		//先清空
+		$go3cdb->d('video_tags',array('vid'=>$r['asset_id'])) ;
+	
+		$i = 1 ;
+		foreach($tags as $iv){
+			if(!isset($atags[$iv])){
+				$tagd = array() ;
+				$tagd['tag_name'] = $iv ;
+				$tagd['type'] = 2 ;
+				$atags[$iv] = $go3cdb->w('tag',$tagd) ;
+			}
+			$tdd = array() ;
+			$tdd['vid'] = $r['asset_id'] ;
+			$tdd['tag_id'] = $atags[$iv] ;
+			$tdd['seq_number'] = $i ;
+			$go3cdb->w('video_tags',$tdd) ;
+			$i++ ;
+		}
+	
+		//增加actor
+		$r['actor'] = str_replace('，',',',$r['actor']) ;
+		$actor = explode(',',$r['actor']) ;
+		$aactors = $go3cdb->r('actor',array('name'=>$actor),'id,name',array('key_value'=>'name,id')) ;
+	
+		//先清空
+		$go3cdb->d('video_actors',array('vid'=>$r['asset_id'])) ;
+		
+		$i = 1 ;
+		foreach($actor as $iv){
+			if(!isset($aactors[$iv])){
+				$tagd = array() ;
+				$tagd['name'] = $iv ;
+				$aactors[$iv] = $go3cdb->w('actor',$tagd) ;
+			}
+			$tdd = array() ;
+			$tdd['vid'] = $r['asset_id'] ;
+			$tdd['actor_id'] = $aactors[$iv] ;
+			$tdd['seq_number'] = $i ;
+	
+			$go3cdb->w('video_actors',$tdd) ;
+	
+			$i++ ;
+		}
+	
+		$rs = $phpcmsdb->r('v9_video_poster',array('asset_id'=>$r['asset_id'])) ;
+		foreach($rs as $iv){
+			$dd = array(
+				'vid' => $iv['asset_id'],
+				'img_id' => intval($iv['type']),
+				'img_url' => $iv['path'],
+				'img_type' => intval($iv['type'])
+			);
+			$go3cdb->w('video_image',$dd) ;
+		}
+		//如果是分集，则检查已上线的总集的图片；如果总集图片的类型多于自己的，则自动将总集其他类型图片变成自己图片
+		if($r['parent_id']){
+			$vvpi = $go3cdb->r('video_image',array('vid'=>$r['parent_id'])) ;	
+			$vvvi = $go3cdb->r('video_image',array('vid'=>$r['asset_id'])) ;
+			$vvvi_types = array();
+			foreach($vvvi as $vi){
+				$vvvi_types[] = $vi['img_type'];	
+			}
+
+			if(count($vvpi) > count($vvvi)){
+				//logError( $r['asset_id'].':'.$r['name']."\n");
+				foreach($vvpi as $vi){
+					if(in_array($vi['img_type'],$vvvi_types)){
+					}else{
+						//logError($vi['img_type'].'not exist'."\n");
+						$vi['vid']=$r['asset_id'];
+						$go3cdb->w('video_image',$vi);
+					}		
+				}
+			}
+		}
+		//结束
+	
+		$rs = $phpcmsdb->r('v9_video_content',array('asset_id'=>$r['asset_id'])) ;
+		foreach($rs as $iv){
+			$dd = array(
+				'vid' => $iv['asset_id'],
+				'quality' => $iv['clarity'],
+				'source' => empty($iv['source_id'])?'1':$iv['source_id'],
+				'play_url' => $iv['path']
+			);
+			$go3cdb->w('video_play_info',$dd) ;
+		}
+		
+		$phpcmsdb->w('v9_video',array('published'=>1), array('id'=>$r['id'])) ;
+	}
+}
+
+//资源/资源包修改
+function __do_publish_to_update_video($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb = yzy_go3c_db() ;
+	global $db ;
+	
+	$db->d('go3c_asset', array('id'=>$r['id'])) ;
+	$db->d('go3c_assetpackage_asset', array('asset_id'=>$r['id'])) ;
+	$db->d('go3c_asset_content', array('asset_id'=>$r['id'])) ;
+	$db->d('go3c_asset_poster', array('asset_id '=>$r['id'])) ;
+	
+	__do_publish_to_off_video($r);
+	__do_publish_to_del_video($r);
+	
+}
+//视频下线
+function __do_publish_to_off_video($r){
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+
+	//不是上线线状态
+	if(!in_array($r['published'],array('1'))) return ;
+
+	//增加计数器
+	$sumcount++ ;
+
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb = yzy_go3c_db() ;
+
+	$phpcmsdb->w('v9_video',array('published'=>0,'offline_status'=>1,'online_status'=>2), array('id'=>$r['id'])) ;
+
+	$dwhere = array('vid'=>$r['asset_id']) ;
+	$go3cdb->d('video',$dwhere) ;
+	$go3cdb->d('video_image',$dwhere) ;
+	$go3cdb->d('video_play_info',$dwhere) ;
+	$go3cdb->d('video_play_control',$dwhere) ;
+	$go3cdb->d('video_tags',$dwhere) ;
+	$go3cdb->d('video_actors',$dwhere) ;
+	$go3cdb->d('bookmark',$dwhere) ;
+	$go3cdb->d('view_history',$dwhere) ;
+}
+
+//视频删除
+function __do_publish_to_del_video($r){
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+	//不是待删除状态
+	if(!in_array($r['online_status'],array('21'))) return ;
+	//增加计数器
+	$sumcount++ ;
+	$phpcmsdb = yzy_phpcms_db() ;
+	$phpcmsdb->d('v9_video_content', array('id'=>$r['id'])) ;
+	$phpcmsdb->d('v9_video_content_data', array('id'=>$r['id'])) ;
+	$phpcmsdb->d('v9_video_poster', array('asset_id'=>$r['asset_id'])) ;
+	$phpcmsdb->d('v9_video_poster_data', array('asset_id'=>$r['asset_id'])) ;
+	$phpcmsdb->d('v9_video', array('id'=>$r['id'])) ;
+	$phpcmsdb->d('v9_video_data', array('id'=>$r['id'])) ;
+}
+
+//发布地区
+function __do_publish_to_tags_area($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb   = yzy_go3c_db() ;
+
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+	//已发布状态
+	if(!in_array($r['published'],array('0','3'))) return ;
+	//增加计数器
+	$sumcount++ ;
+	
+	//删除原有的信息
+	$go3cdb->d('column_content_area', array('area_id'=>$r['id'])) ;
+	
+	//拆分belong字段为数组
+	$col_id_array = explode(',', $r['belong']);
+	
+	//循环插入
+	foreach ($col_id_array AS $col_value){
+		$d = array(
+			'col_id' 	=> $col_value, 
+			'area_id'	=> $r['id'], 
+			'area_name' => $r['title']
+		);	
+		$go3cdb->w('column_content_area',$d);
+	}
+	
+	//往go3c tag表插入
+	$go3c_tag = $go3cdb->r('tag', array('tag_name'=>$r['title']), 'tag_id,tag_name', array()) ;
+	if(!isset($go3c_tag)){
+		$tagd = array() ;
+		$tagd['tag_name'] = $r['title'];
+		$tagd['type'] = 1;
+		$go3cdb->w('tag',$tagd) ;
+	}
+	
+	$phpcmsdb->w('v9_tags',array('published'=>1), array('id'=>$r['id'])) ;
+}
+
+//发布栏目
+function __do_publish_to_tags_cate($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb   = yzy_go3c_db() ;
+
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+	//已发布状态
+	if(!in_array($r['published'],array('0','3'))) return ;
+	//增加计数器
+	$sumcount++ ;
+	
+	//删除原有的信息
+	$go3cdb->d('column_content_category', array('cat_id'=>$r['id'])) ;
+	
+	//拆分belong字段为数组
+	$col_id_array = explode(',', $r['belong']);
+	
+	//循环插入
+	foreach ($col_id_array AS $col_value){
+		$d = array(
+			'col_id' 	=> $col_value, 
+			'cat_id'	=> $r['id'], 
+			'cat_name' => $r['title']
+		);	
+		$go3cdb->w('column_content_category',$d);
+	}
+	
+	//往go3c tag表插入
+	$go3c_tag = $go3cdb->r('tag', array('tag_name'=>$r['title']), 'tag_id,tag_name', array()) ;
+	if(!isset($go3c_tag)){
+		$tagd = array() ;
+		$tagd['tag_name'] = $r['title'];
+		$tagd['type'] = 2;
+		$go3cdb->w('tag',$tagd) ;
+	}
+	
+	$phpcmsdb->w('v9_tags',array('published'=>1), array('id'=>$r['id'])) ;
+}
+
+//发布年份
+function __do_publish_to_tags_year($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb   = yzy_go3c_db() ;
+
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+	//已发布状态
+	if(!in_array($r['published'],array('0','3'))) return ;
+	//增加计数器
+	$sumcount++ ;
+	
+	//删除原有的信息
+	$go3cdb->d('column_content_year', array('seq_number'=>$r['id'])) ;
+	
+	//拆分belong字段为数组
+	$col_id_array = explode(',', $r['belong']);
+	
+	//循环插入
+	foreach ($col_id_array AS $col_value){
+		$d = array(
+			'col_id' 		=> $col_value, 
+			'seq_number'	=> $r['id'], 
+			'year_released' => $r['title']
+		);	
+		$go3cdb->w('column_content_year',$d);
+	}
+	$phpcmsdb->w('v9_tags',array('published'=>1), array('id'=>$r['id'])) ;
+}
+
+//发布客户端
+function __do_publish_to_client_online($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb   = yzy_go3c_db() ;
+
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+	//已发布状态
+	if(!in_array($r['published'],array('0','3'))) return ;
+	//增加计数器
+	$sumcount++ ;
+	$d = array(
+		'term_id' 		  => $r['term_id'],
+		'os_type' 		  => $r['os_type'],
+		'version_number'  => $r['title'],
+		'features' 		  => $r['features'],
+		'release_date' 	  => $r['release_date'],
+		'force_update'	  => $r['force_update'],
+		'date_tested' 	  => $r['date_tested'],
+		'last_edit_time'  => date('Y-m-d H:i:s', $r['updatetime']),
+		'last_edit_by' 	  => $r['username'],
+		'update_location' => $r['update_location'],
+	);	
+	//插入信息
+	$go3cdb->w('client_update',$d);
+	$phpcmsdb->w('v9_client_version',array('published'=>1), array('id'=>$r['id'])) ;
+}
+
+//删除客户端
+function __do_publish_to_client_delete($r){
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb   = yzy_go3c_db() ;
+
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+	//已发布状态
+	if(!in_array($r['published'],array('0','3'))) return ;
+	//增加计数器
+	$sumcount++ ;
+	$d = array(
+		'term_id' 		  => $r['term_id'],
+		'os_type' 		  => $r['os_type'],
+		'version_number'  => $r['title'],
+	);	
+	//删除客户端
+	$go3cdb->d('client_update',$d);
+	$phpcmsdb->d('v9_client_version', array('id'=>$r['id'])) ;
+	$phpcmsdb->d('v9_client_version_data', array('id'=>$r['id'])) ;
+}
+
+//发布广告
+function __do_publish_to_pre_adverts($r){
+	
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb   = yzy_go3c_db() ;
+		
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+	
+	//echo time();exit;
+	
+	//已发布状态
+	if(!in_array($r['adStatus'],array('4'))) return ;
+	
+	$arr_conf = array('type_id' =>$r['type_id'], 'term_id' => $r['term_id'], 'spid' => $r['spid']);
+	
+	//检查广告位是否存在
+	$adverts_data = $go3cdb->r('adverts', $arr_conf);
+	$adverts_num  = count($adverts_data);
+	
+	$r['time_start'] = date('Y-m-d H:i:s', $r['taskDate']);
+	
+/*	echo '<pre>';print_r($r);
+	echo '<pre>';print_r($arr_conf);
+	echo $adverts_num;*/
+	
+	//增加计数器
+	$sumcount++ ;
+	
+	//如果当前时间大于等于预发布时间
+	if( time() >= $r['taskDate']){
+		//如果不存在就新增，存在就更新
+		if(!$adverts_num){
+			$d = array(
+				'type_id'          => $r['type_id'],
+				'ad_type' 	   => $r['adType'],
+				'position' 	   => $r['position'],
+				'display_type' => $r['viewType'],
+				'term_id' 	   => $r['term_id'],
+				'spid' 	  	   => $r['spid'],
+				'text' 	  	   => $r['adDesc'],
+				'img_url' 	   => $r['imgUrl'],
+				'link_url' 	   => $r['linkUrl'],
+				'time_start'   => $r['time_start'],
+			);
+			//echo '<pre>';print_r($d);exit;
+			$go3cdb->w('adverts',$d);
+		}else{
+			$d = array(
+				'ad_type' 	   => $r['adType'],
+				'position' 	   => $r['position'],
+				'display_type' => $r['viewType'],
+				'text' 	  	   => $r['adDesc'],
+				'img_url' 	   => $r['imgUrl'],
+				'link_url' 	   => $r['linkUrl'],
+				'link_url' 	   => $r['linkUrl'],
+				'time_start'   => $r['time_start'],
+			);
+			//echo '<pre>';print_r($d);exit;
+			$go3cdb->w('adverts', $d, $arr_conf);
+		}
+	}
+		
+	$phpcmsdb->w('v9_pre_adverts', array('adStatus'=>'100'), array('adId'=>$r['adId'])) ;
+}
+
+
+//发布推荐内容
+function __do_publish_to_pre_task($r){
+	
+	$phpcmsdb = yzy_phpcms_db() ;
+	$go3cdb   = yzy_go3c_db() ;
+	
+	//查询type_id
+	$asset_type_id   = $phpcmsdb->r('v9_position', array('posid' => $r['posid']), 'type_id');
+	$r['type_id']    = $asset_type_id[0]['type_id'];
+	
+	$task_video = $phpcmsdb->r('v9_pre_task_video', array('taskId' => $r['taskId']), '*');
+	
+	foreach ($task_video as $tvalue) {
+		
+		//只有是video的时候才需要查询column_id，其他情况下column_id = 2
+		if($tvalue['videoSource'] == '2'){
+			$asset_column_id = $phpcmsdb->r('v9_video', array('asset_id' => $tvalue['videoId']), 'column_id');
+			$tvalue['column_id'] = $asset_column_id[0]['column_id'];
+		}else {
+			$tvalue['column_id'] = '2';
+		}
+		
+		//处理videoID
+		if($tvalue['videoSource'] == '1'){
+			$tvalue['videoId'] = 'Channel'.$tvalue['videoId'];
+		}elseif($r['videoSource'] == '3'){
+			$tvalue['videoId'] = 'Epg'.$tvalue['videoId'];
+		}
+		
+		//构造img_id
+		if($tvalue['imgType'] == 'img'){
+			$tvalue['img_id']   = '1';
+		}elseif ($tvalue['imgType'] == 'imgpath'){
+			$tvalue['img_id'] = '2';
+		}elseif ($tvalue['imgType'] == '0'){
+			$tvalue['img_id'] = '1';
+		}else{
+			$tvalue['img_id'] = $tvalue['imgType'];
+		}
+		
+		//其他需要传递过来的变量
+		$tvalue['type_id']    = $r['type_id'];
+		$tvalue['taskStatus'] = $r['taskStatus'];
+		$tvalue['taskDate']   = $r['taskDate'];
+		
+		$task_video_array[] = $tvalue;
+	}
+
+	static $sumcount ;
+	if(!isset($sumcount)) $sumcount = 0 ;
+	if($r == 'getsumcount') return $sumcount ;
+
+	//echo '<pre>';print_r($task_video_array);
+	
+	//已发布状态
+	if(!in_array($r['taskStatus'],array('4'))) return ;
+	
+	//如果是今天需要发布的内容
+	//if( date('Y-m-d',$r['taskDate']) == date('Y-m-d',time()) ){
+		
+		//增加计数器
+		$sumcount++ ;
+		
+		//根据三个主键删除所有的老的数据
+		$dwhere = array('spid' =>$r['spid'],  'term_id' =>$r['term_id'], 'type_id' => $r['type_id']);
+		$go3cdb->d('recommended_video',$dwhere);
+		
+		//循环处理推荐位内的视频
+		foreach ($task_video_array as $value) {
+			
+			$value['preId'] = $value['videoSort'] ? $value['videoSort'] : $value['preId'];
+			
+			$data_video = array(
+				'spid' 	     => $value['spid'],
+				'term_id' 	 => $value['term_id'],
+				'type_id'    => $value['type_id'],
+				'seq_number' => $value['preId'],
+				'column_id'  => $value['column_id'],
+				'vid' 	  	 => $value['videoId'],
+				'img_id' 	 => $value['img_id'],
+				'title' 	 => $value['videoTitle'],
+				'subtitle' 	 => $value['videoDesc'],
+			);
+			//echo '<pre>';print_r($data_video);
+			$go3cdb->w('recommended_video',$data_video);
+		}
+		
+		//循环处理推荐位内的图片
+		foreach ($task_video_array as $value) {
+			//检查有没有
+			$data_image = array(
+				'vid' 	   => $value['videoId'],
+				'img_id'   => $value['img_id'],
+				'img_url'  => $value['videoImg'],
+				'img_type' => $value['img_id']
+			);
+			//echo '<pre>';print_r($data_image);
+			$video_image_exist = $go3cdb->r('video_image', $data_image, '*');
+			//echo '<pre>';print_r($video_image_exist);
+			if(!$video_image_exist[0]['vid']){
+				if($value['imgType'] == '0'){
+				$go3cdb->w('video_image',$data_image,array('vid'=> $value['videoId'],'img_id'=> $value['img_id']));
+				}else			
+				$go3cdb->w('video_image',$data_image);
+			}
+		}
+	//}
+	//echo $sumcount;
+	//exit;
+	//推荐位视频设置为已经发布状态
+	$phpcmsdb->w('v9_pre_task', array('taskStatus' =>'100'), array('taskId' =>$r['taskId']));	
+	
+}

@@ -1,0 +1,130 @@
+<?php return array (
+  '__ex__' => 1397201010,
+  'data' => 
+  array (
+    'type' => 
+    array (
+      'name' => '无损',
+      'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/bdmusic/channel/lossless/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+    ),
+    'cate' => 
+    array (
+      0 => 
+      array (
+        't' => 
+        array (
+          'name' => '无损',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/bdmusic/channel/lossless/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '全部',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E5%2585%25A8%25E9%2583%25A8/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '华语',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E5%258D%258E%25E8%25AF%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '日韩',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E6%2597%25A5%25E9%259F%25A9/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '欧美',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E6%25AC%25A7%25E7%25BE%258E/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '流行',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E6%25B5%2581%25E8%25A1%258C/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '摇滚',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E6%2591%2587%25E6%25BB%259A/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '布鲁斯',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E5%25B8%2583%25E9%25B2%2581%25E6%2596%25AF/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '嘻哈',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E5%2598%25BB%25E5%2593%2588/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '民谣',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E6%25B0%2591%25E8%25B0%25A3/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          9 => 
+          array (
+            'name' => '电子',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E7%2594%25B5%25E5%25AD%2590/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          10 => 
+          array (
+            'name' => '爵士',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E7%2588%25B5%25E5%25A3%25AB/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          11 => 
+          array (
+            'name' => '古典',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E5%258F%25A4%25E5%2585%25B8/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          12 => 
+          array (
+            'name' => '世界音乐',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E4%25B8%2596%25E7%2595%258C%25E9%259F%25B3%25E4%25B9%2590/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          13 => 
+          array (
+            'name' => '汪峰',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E6%25B1%25AA%25E5%25B3%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          14 => 
+          array (
+            'name' => '张学友',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E5%25BC%25A0%25E5%25AD%25A6%25E5%258F%258B/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          15 => 
+          array (
+            'name' => '王菲',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E7%258E%258B%25E8%258F%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          16 => 
+          array (
+            'name' => '凤凰传奇',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E5%2587%25A4%25E5%2587%25B0%25E4%25BC%25A0%25E5%25A5%2587/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          17 => 
+          array (
+            'name' => '陈奕迅',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E9%2599%2588%25E5%25A5%2595%25E8%25BF%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          18 => 
+          array (
+            'name' => 'beyond',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/beyond/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          19 => 
+          array (
+            'name' => '刘德华',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E5%2588%2598%25E5%25BE%25B7%25E5%258D%258E/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          20 => 
+          array (
+            'name' => '任贤齐',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/bdmusic/channel/lossless/category/%25E4%25BB%25BB%25E8%25B4%25A4%25E9%25BD%2590/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+    ),
+  ),
+);

@@ -1,0 +1,24 @@
+<?php return array (
+  '__ex__' => 1394193557,
+  'data' => 
+  array (
+    'type' => 
+    array (
+      'name' => '公开课',
+      'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/netease/channel/open/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+    ),
+    'cate' => 
+    array (
+      'name' => 
+      array (
+        't' => '公开课',
+        'l' => NULL,
+      ),
+      'url' => 
+      array (
+        't' => 'http://tv4.hdpfans.com/~rss.get.category/site/netease/channel/open/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        'l' => NULL,
+      ),
+    ),
+  ),
+);

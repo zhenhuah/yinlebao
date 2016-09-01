@@ -1,0 +1,448 @@
+<?php return array (
+  '__ex__' => 1394110637,
+  'data' => 
+  array (
+    'type' => 
+    array (
+      0 => 
+      array (
+        'name' => '电影',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/sohu/channel/movie/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+      1 => 
+      array (
+        'name' => '电视剧',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/sohu/channel/tv/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+      2 => 
+      array (
+        'name' => '动漫',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/sohu/channel/comic/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+      3 => 
+      array (
+        'name' => '教育',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/sohu/channel/edu/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+    ),
+    'cate' => 
+    array (
+      0 => 
+      array (
+        't' => 
+        array (
+          'name' => '电影',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/sohu/channel/movie/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '最热',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E6%259C%2580%25E7%2583%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '最新',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E6%259C%2580%25E6%2596%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '动作',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E5%258A%25A8%25E4%25BD%259C/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '爱情',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E7%2588%25B1%25E6%2583%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '喜剧',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E5%2596%259C%25E5%2589%25A7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '风月',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E9%25A3%258E%25E6%259C%2588/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '恐怖',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E6%2581%2590%25E6%2580%2596/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '剧情',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E5%2589%25A7%25E6%2583%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '科幻',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E7%25A7%2591%25E5%25B9%25BB/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          9 => 
+          array (
+            'name' => '战争',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E6%2588%2598%25E4%25BA%2589/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          10 => 
+          array (
+            'name' => '华语',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E5%258D%258E%25E8%25AF%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          11 => 
+          array (
+            'name' => '好莱坞',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E5%25A5%25BD%25E8%258E%25B1%25E5%259D%259E/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          12 => 
+          array (
+            'name' => '欧洲',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E6%25AC%25A7%25E6%25B4%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          13 => 
+          array (
+            'name' => '日本',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E6%2597%25A5%25E6%259C%25AC/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          14 => 
+          array (
+            'name' => '韩国',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/%25E9%259F%25A9%25E5%259B%25BD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          15 => 
+          array (
+            'name' => '2013',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2013/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          16 => 
+          array (
+            'name' => '2012',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2012/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          17 => 
+          array (
+            'name' => '2011',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2011/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          18 => 
+          array (
+            'name' => '2010',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2010/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          19 => 
+          array (
+            'name' => '2009',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2009/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          20 => 
+          array (
+            'name' => '2008',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2008/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          21 => 
+          array (
+            'name' => '2007',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2007/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          22 => 
+          array (
+            'name' => '2006',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2006/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          23 => 
+          array (
+            'name' => '2005',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2005/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          24 => 
+          array (
+            'name' => '2004',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2004/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          25 => 
+          array (
+            'name' => '2003',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2003/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          26 => 
+          array (
+            'name' => '2002',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2002/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          27 => 
+          array (
+            'name' => '2001',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/2001/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          28 => 
+          array (
+            'name' => '90年代',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/90%25E5%25B9%25B4%25E4%25BB%25A3/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          29 => 
+          array (
+            'name' => '80年代',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/movie/category/80%25E5%25B9%25B4%25E4%25BB%25A3/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+      1 => 
+      array (
+        't' => 
+        array (
+          'name' => '电视剧',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/sohu/channel/tv/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '热门',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E7%2583%25AD%25E9%2597%25A8/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '最新',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E6%259C%2580%25E6%2596%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '美剧',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E7%25BE%258E%25E5%2589%25A7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '偶像',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E5%2581%25B6%25E5%2583%258F/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '言情',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E8%25A8%2580%25E6%2583%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '历史',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E5%258E%2586%25E5%258F%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '都市',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E9%2583%25BD%25E5%25B8%2582/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '悬疑',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E6%2582%25AC%25E7%2596%2591/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '动作',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E5%258A%25A8%25E4%25BD%259C/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          9 => 
+          array (
+            'name' => '武侠',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E6%25AD%25A6%25E4%25BE%25A0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          10 => 
+          array (
+            'name' => '古装',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E5%258F%25A4%25E8%25A3%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          11 => 
+          array (
+            'name' => '战争',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E6%2588%2598%25E4%25BA%2589/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          12 => 
+          array (
+            'name' => '内地',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E5%2586%2585%25E5%259C%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          13 => 
+          array (
+            'name' => '港剧',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E6%25B8%25AF%25E5%2589%25A7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          14 => 
+          array (
+            'name' => '台剧',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E5%258F%25B0%25E5%2589%25A7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          15 => 
+          array (
+            'name' => '韩剧',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/%25E9%259F%25A9%25E5%2589%25A7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          16 => 
+          array (
+            'name' => '2013',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/2013/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          17 => 
+          array (
+            'name' => '2012',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/2012/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          18 => 
+          array (
+            'name' => '2011',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/2011/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          19 => 
+          array (
+            'name' => '2010',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/tv/category/2010/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+      2 => 
+      array (
+        't' => 
+        array (
+          'name' => '动漫',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/sohu/channel/comic/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '全部',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/%25E5%2585%25A8%25E9%2583%25A8/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '日播榜',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/%25E6%2597%25A5%25E6%2592%25AD%25E6%25A6%259C/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '周播榜',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/%25E5%2591%25A8%25E6%2592%25AD%25E6%25A6%259C/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '总播榜',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/%25E6%2580%25BB%25E6%2592%25AD%25E6%25A6%259C/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '最近更新',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/%25E6%259C%2580%25E8%25BF%2591%25E6%259B%25B4%25E6%2596%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '5岁以下',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/5%25E5%25B2%2581%25E4%25BB%25A5%25E4%25B8%258B/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '5岁~12岁',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/5%25E5%25B2%2581%257E12%25E5%25B2%2581/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '13岁~18岁',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/13%25E5%25B2%2581%257E18%25E5%25B2%2581/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '18岁以上',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/18%25E5%25B2%2581%25E4%25BB%25A5%25E4%25B8%258A/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          9 => 
+          array (
+            'name' => '2013',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2013/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          10 => 
+          array (
+            'name' => '2012',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2012/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          11 => 
+          array (
+            'name' => '2011',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2011/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          12 => 
+          array (
+            'name' => '2010',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2010/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          13 => 
+          array (
+            'name' => '2009',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2009/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          14 => 
+          array (
+            'name' => '2008',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2008/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          15 => 
+          array (
+            'name' => '2007',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2007/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          16 => 
+          array (
+            'name' => '2006',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2006/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          17 => 
+          array (
+            'name' => '2005',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2005/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          18 => 
+          array (
+            'name' => '2004',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2004/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          19 => 
+          array (
+            'name' => '2003',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2003/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          20 => 
+          array (
+            'name' => '2002',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2002/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          21 => 
+          array (
+            'name' => '2001',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/2001/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          22 => 
+          array (
+            'name' => '90年代',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/90%25E5%25B9%25B4%25E4%25BB%25A3/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          23 => 
+          array (
+            'name' => '80年代',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/comic/category/80%25E5%25B9%25B4%25E4%25BB%25A3/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+      3 => 
+      array (
+        't' => 
+        array (
+          'name' => '教育',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/sohu/channel/edu/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          'name' => '公开课',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/sohu/channel/edu/category/%25E5%2585%25AC%25E5%25BC%2580%25E8%25AF%25BE/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+      ),
+    ),
+  ),
+);

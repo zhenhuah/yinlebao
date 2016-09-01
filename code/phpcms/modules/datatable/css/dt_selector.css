@@ -1,0 +1,29 @@
+table.dataTable tr td:first-child {
+		text-align: center;
+	}
+
+	table.dataTable tr td:first-child:before {
+		content: "\f096"; /* fa-square-o */
+		font-family: FontAwesome;
+	}
+
+	table.dataTable tr.selected td:first-child:before {
+		content: "\f046"; /* fa-check-square-o */
+	}
+
+	table.dataTable tr td.dataTables_empty:first-child:before {
+		content: "";
+	}
+	
+	table.dataTable thead th.sorting:after {
+    content: "\f0dc";
+    color: #ddd;
+    font-size: 0.8em;
+    padding-top: 0.12em;
+}
+table.dataTable thead th.sorting_asc:after {
+    content: "\f0de";
+}
+table.dataTable thead th.sorting_desc:after {
+    content: "\f0dd";
+}

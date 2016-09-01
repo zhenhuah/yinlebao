@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+body {margin:0; padding:0; font-family:"Microsoft Yahei", "黑体";}
+img {border:0;}
+a:link, a:visited {text-decoration:none; color:#dcdad0;}
+.div_line{display: inline-block; *display: inline; *zoom: 1; vertical-align:top;}
+
+.ip_wrap {width:640px; height:auto; margin:0 auto; background-color:#140e0c;}
+.ih_bar_top {background:url(../images/ih_bar_top_bg.png) no-repeat 0 0; width:640px; height:84px;}
+.ih_logo {padding:10px 0 0; float:left;}
+.ih_search {float:right; padding:16px 14px 0 0;}
+
+.ih_hot_text{padding:0 14px; height:30px; color:#b0a7a1; line-height:28px; font-size:18px; background:url(../images/ih_hot_text_bg.png) no-repeat 0 0;}
+.ih_hot_text a:link, .ih_hot_text a:visited{color:#00a0e9;}
+.ih_hot_cnt {margin-right:50px; float:left;}
+.ih_tv_logo{padding:3px 9px 0 0;}
+.marL16 {margin-left:16px;}
+.marT8 {margin-top:8px;}
+
+.ih_lst_t {padding:16px 18px 25px;}
+.ih_lst {height:246px; background:url(../images/ih_bg.png) no-repeat 0 0;}
+.ih_img_lst{padding:0 40px;}
+.ih_img_mid {margin:0 55px;}
+.ih_img_wrap {width:150px; height:110px; position:relative;}
+.ihl_bg_icon {position:absolute; right:0; bottom:0;}
+.ih_lst_lnk {text-align:center; padding:7px 5px 0; font-size:20px;}
+.ih_qikan {display:block; color:#b5b4b5; font-size:14px; padding:2px 0 0;}
+.ih_img_lst img, .ih_img_wrap img {-moz-box-shadow:2px 2px 10px #000; -webkit-box-shadow:2px 2px 10px #000; box-shadow:2px 2px 10px #000; }
+.ih_lst_t_txt {width:212px;}
+.ih_ad_txt {color:#428ca2; width:280px; height:30px; line-height:28px; text-align:center; border:1px solid #54666b; font-size:16px;}
+.ih_img_div {width:150px;}
+
+.ih_btm{background:url(../images/ih_bar_down_bg.png) no-repeat 0 0; height:84px; padding:0 2px 0 33px;}
+.ih_h_tj, .ih_h_pd, .ih_h_zb, .ih_h_dds, .ih_h_sz{width:90px; height:84px; margin-right:31px;}
+.ih_h_tj a:link, .ih_h_tj a:visited {display:block; width:90px; height:84px; line-height:999px; overflow:hidden; background:url(../images/ih_sytj_nosel.png) no-repeat 0 0;}
+.ih_h_tj a:hover, .ih_h_tj a:active, .ih_h_tj a.here {background:url(../images/ih_sytj_sel.png) no-repeat 0 0;}
+.ih_h_pd a:link, .ih_h_pd a:visited {display:block; width:90px; height:84px; line-height:999px; overflow:hidden; background:url(../images/ih_pd_nosel.png) no-repeat 0 0;}
+.ih_h_pd a:hover, .ih_h_pd a:active, .ih_h_pd a.here {background:url(../images/ih_pd_sel.png) no-repeat 0 0;}
+.ih_h_zb a:link, .ih_h_zb a:visited {display:block; width:90px; height:84px; line-height:999px; overflow:hidden; background:url(../images/ih_dszb_nosel.png) no-repeat 0 0;}
+.ih_h_zb a:hover, .ih_h_zb a:active, .ih_h_zb a.here{background:url(../images/ih_dszb_sel.png) no-repeat 0 0;}
+.ih_h_dds a:link, .ih_h_dds a:visited {display:block; width:90px; height:84px; line-height:999px; overflow:hidden; background:url(../images/ih_mybigtv_nosel.png) no-repeat 0 0;}
+.ih_h_dds a:hover, .ih_h_dds a:active, .ih_h_dds a.here{background:url(../images/ih_mybigtv_sel.png) no-repeat 0 0;}
+.ih_h_sz a:link, .ih_h_sz a:visited {display:block; width:90px; height:84px; line-height:999px; overflow:hidden; background:url(../images/ih_set_nosel.png) no-repeat 0 0;}
+.ih_h_sz a:hover, .ih_h_sz a:active, .ih_h_sz a.here{background:url(../images/ih_set_sel.png) no-repeat 0 0;}
+
+.wrapper {width:640px; margin:0 auto;}
+.shuoming {margin-top:20px; border:1px solid #ccc; padding-bottom:10px;}
+.shuoming dt {height:30px; line-height:30px; font-weight:bold; text-indent:10px;}
+.shuoming dd {line-height:20px; padding:5px 20px;}
+
+/* qqshop focus */
+#focus {width:640px; height:320px; overflow:hidden; position:relative;}
+#focus ul {height:320px; position:absolute; margin:0; padding:0;}
+#focus ul li {float:left; width:640px; height:320px; overflow:hidden; position:relative; background:#000;}
+#focus ul li div {position:absolute; overflow:hidden;}
+#focus .btnBg {position:absolute; width:640px; height:30px; left:0; bottom:0; background:#000;}
+#focus .btn {position:absolute; width:620px; height:14px; padding:6px 10px; right:0; bottom:0; text-align:center;}
+#focus .btn span {display:inline-block; _display:inline; _zoom:1; width:14px; height:14px; _font-size:0; margin-left:10px; cursor:pointer; background: url(../images/ih_hot_radio_nosel.png) no-repeat 0 0;}
+#focus .btn span.on {background:url(../images/ih_hot_radio_sel.png) no-repeat 0 0;}
+.ih_hotc {position:absolute; top:0; left:0; z-index:9999;}
+
+/* video list */
+.productshow{position:relative;}
+.productshow .scrollcontainer{width:560px;height:170px;overflow:hidden;position:relative;margin:0 40px;}
+.productshow .scrollcontainer ul{width:20000px;position:absolute;left:0px;top:0px; margin:0; padding:0;}
+.productshow .scrollcontainer li{float:left;width:150px;text-align:center; list-style:none; margin-right:55px;}
+.productshow .scrollcontainer li.last{background:none;}
+/*.productshow .scrollcontainer li div{height:95px;width:162px;overflow:hidden;text-align:center;}*/
+.productshow .scrollcontainer a:hover img{filter:alpha(opacity=86);-moz-opacity:0.86;opacity:0.86;}
+
+a.abtn{position:absolute;top:0;display:block;height:132px;width:6px;overflow:hidden;text-indent:-20000px;background:url(../images/arrow3.gif) 0px center no-repeat;}
+a.aleft{left:10px;}
+a.agrayleft{background-position:-12px center;}
+a.aright{right:7px;background-position:-6px center;}
+a.agrayright{background-position:-18px center;}

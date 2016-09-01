@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iphone首页</title>
+<link rel="stylesheet" type="text/css" href="{TASK_PATH}phone/css/css.css"/>
+<script type="text/javascript" src="{TASK_PATH}js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="{TASK_PATH}js/Xslider.js"></script>
+<script type="text/javascript">
+$(function() {
+	var sWidth = $("#focus").width(); //获取焦点图的宽度（显示面积）
+	var len = $("#focus ul li").length; //获取焦点图个数
+	var index = 0;
+	var picTimer;
+	
+	//以下代码添加数字按钮和按钮后的半透明条，还有上一页、下一页两个按钮
+	var btn = "<div class='btnBg'></div><div class='btn'>";
+	for(var i=0; i < len; i++) {
+		btn += "<span></span>";
+	}
+	btn += "</div><div class='preNext pre'></div><div class='preNext next'></div>";
+	$("#focus").append(btn);
+	$("#focus .btnBg").css("opacity",0.8);
+
+	//为小按钮添加鼠标滑入事件，以显示相应的内容
+	$("#focus .btn span").css("opacity",0.8).mouseenter(function() {
+		index = $("#focus .btn span").index(this);
+		showPics(index);
+	}).eq(0).trigger("mouseenter");
+
+	//上一页、下一页按钮透明度处理
+	$("#focus .preNext").css("opacity",0.8).hover(function() {
+		$(this).stop(true,false).animate({"opacity":"0.8"},300);
+	},function() {
+		$(this).stop(true,false).animate({"opacity":"0.8"},300);
+	});
+
+	//上一页按钮
+	$("#focus .pre").click(function() {
+		index -= 1;
+		if(index == -1) {index = len - 1;}
+		showPics(index);
+	});
+
+	//下一页按钮
+	$("#focus .next").click(function() {
+		index += 1;
+		if(index == len) {index = 0;}
+		showPics(index);
+	});
+
+	//本例为左右滚动，即所有li元素都是在同一排向左浮动，所以这里需要计算出外围ul元素的宽度
+	$("#focus ul").css("width",sWidth * (len));
+	
+	//鼠标滑上焦点图时停止自动播放，滑出时开始自动播放
+	$("#focus").hover(function() {
+		clearInterval(picTimer);
+	},function() {
+		picTimer = setInterval(function() {
+			showPics(index);
+			index++;
+			if(index == len) {index = 0;}
+		},4000); //此4000代表自动播放的间隔，单位：毫秒
+	}).trigger("mouseleave");
+	
+	//显示图片函数，根据接收的index值显示相应的内容
+	function showPics(index) { //普通切换
+		var nowLeft = -index*sWidth; //根据index值计算ul元素的left值
+		$("#focus ul").stop(true,false).animate({"left":nowLeft},300); //通过animate()调整ul元素滚动到计算出的position
+		$("#focus .btn span").stop(true,false).animate({"opacity":"0.8"},300).eq(index).stop(true,false).animate({"opacity":"1"},300); //为当前的按钮切换到选中的效果
+		$("#focus .btn span").removeClass("on").eq(index).addClass("on"); //为当前的按钮切换到选中的效果
+	}
+});
+
+</script>
+</head>
+
+<body>
+<div class="ip_wrap">
+	<!-- header start -->
+	<div class="ih_bar_top">
+    	<div class="ih_search"><img src="{TASK_PATH}phone/images/ih_search.png" /></div>
+    	<div class="ih_logo"><img src="{TASK_PATH}phone/images/ih_logo.png" /></div>
+    </div>   
+	<!-- header end  -->
+
+	<!-- 今日更新跑马灯 start -->
+	{if $videoTask['posidAdOne']}
+    <div class="ih_hot_text">	
+    	<marquee scrollamount="3">
+		{loop $videoTask['posidAdOne'] $row}
+    	<div class="ih_hot_cnt">
+        	<div class="div_line ih_tv_logo">{if $row['videoImg']}<img src="{$row['videoImg']}" style="width:83px;height:19px"/ title="{$row['videoTitle']}">{/if}</div>
+            <div class="div_line">{if $row['online_date'] > 0}{/if} {$row['videoTitle']}<a href="{$row['videoPlayUrl']}" class="marL16" title="{$row['videoTitle']}">点击查看</a></div>
+        </div>
+		{/loop}
+        </marquee>
+    </div>
+	{/if}
+    <!-- 今日更新跑马灯 end  -->
+
+	<!-- 首页滚动 start -->
+	{if $videoTask['posidOne']}
+    <div class="wrapper">
+        <div id="focus">
+        	<div class="ih_hotc"><!--img src="{TASK_PATH}phone/images/ih_hotc_dsj.png" /--></div>
+            <ul>
+			{loop $videoTask['posidOne'] $row}
+                <li><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" alt="{$row['videoTitle']}" title="{$row['videoTitle']}"/></a></li>
+			{/loop}
+            </ul>
+        </div>
+    </div>
+	{/if}
+    <!-- 首页滚动 end -->
+
+	<!--今日更新 start -->
+	{if $videoTask['posidThree']}
+    <div class="ih_lst">
+    	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}phone/images/ihl_jrgx_text.png" /></div>
+			<div class="div_line ih_ad_txt">百家电视台直播，视频热站全搜罗</div>
+        </div>
+        
+        <div class="productshow">
+            <div class="scrollcontainer">
+                <ul>
+				{loop $videoTask['posidThree'] $row}
+                    <li>
+                        <div class="div_line ih_img_div">
+                            <div class="ih_img_wrap"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" style="width:150px;height:110px" title="{$row['videoTitle']}"/></a></div>
+                            <div class="ih_lst_lnk"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">20120728期</span--></a></div>
+                        </div>
+                    </li>
+				{/loop}
+                </ul>
+            </div>
+            <a class="abtn aleft" href="#left">左移</a>
+            <a class="abtn aright" href="#right">右移</a>
+        </div>
+    </div>
+	{/if}
+    <!--今日更新 end -->
+
+	<!-- 电视栏目 start -->
+	{if $videoTask['posidFour']}
+    <div class="ih_lst marT8">
+    	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}phone/images/ihl_dslm_text.png" /></div><div class="div_line ih_ad_txt">百家电视台直播，视频热站全搜罗</div>
+        </div>
+		
+		<div class="productshow">
+            <div class="scrollcontainer">
+                <ul>
+				{loop $videoTask['posidFour'] $row}
+                    <li>
+                        <div class="div_line ih_img_div">
+                            <div class="ih_img_wrap"><a href="{$row['videoPlayUrl']}" target="_blank"><img src="{$row['videoImg']}" style="width:150px;height:110px" title="{$row['videoTitle']}"/></a></div>
+                            <div class="ih_lst_lnk"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">20120728期</span--></a></div>
+                        </div>
+                    </li>
+				{/loop}
+                </ul>
+            </div>
+            <a class="abtn aleft" href="#left">左移</a>
+            <a class="abtn aright" href="#right">右移</a>
+        </div>
+     </div>
+	{/if}
+    <!-- 电视栏目 end -->
+
+	<!-- 电影 start -->
+	{if $videoTask['posidFive']}
+    <div class="ih_lst marT8">
+    	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}phone/images/ihl_rbdy_text.png" /></div>
+        </div>
+		<div class="productshow">
+            <div class="scrollcontainer">
+                <ul>
+				{loop $videoTask['posidFive'] $row}
+                    <li>
+                        <div class="div_line ih_img_div">
+                            <div class="ih_img_wrap"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" style="width:150px;height:110px" title="{$row['videoTitle']}"/></a></div>
+                            <div class="ih_lst_lnk"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">20120728期</span--></a></div>
+                        </div>
+                    </li>
+				{/loop}
+                </ul>
+            </div>
+            <a class="abtn aleft" href="#left">左移</a>
+            <a class="abtn aright" href="#right">右移</a>
+        </div>
+    </div>
+	{/if}
+    <!-- 电影 end -->
+
+	<!-- 电视剧 start   -->
+	{if $videoTask['posidSix']}
+    <div class="ih_lst marT8">
+    	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}phone/images/ihl_rbjj_text.png" /></div>
+        </div>
+
+		<div class="productshow">
+            <div class="scrollcontainer">
+                <ul>
+				{loop $videoTask['posidSix'] $row}
+                    <li>
+                        <div class="div_line ih_img_div">
+                            <div class="ih_img_wrap"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" style="width:150px;height:110px" title="{$row['videoTitle']}"/></a></div>
+                            <div class="ih_lst_lnk"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">20120728期</span--></a></div>
+                        </div>
+                    </li>
+				{/loop}
+                </ul>
+            </div>
+            <a class="abtn aleft" href="#left">左移</a>
+            <a class="abtn aright" href="#right">右移</a>
+        </div>	
+    </div>
+	{/if}
+    <!-- 电视剧 end  -->
+
+	<!-- 乐酷 start -->
+	{if $videoTask['posidSeven']}
+    <div class="ih_lst marT8">
+    	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}phone/images/ihl_leku_text.png" /></div>
+        </div>
+	 <div class="productshow">
+            <div class="scrollcontainer">
+                <ul>
+				{loop $videoTask['posidSeven'] $row}
+                    <li>
+                        <div class="div_line ih_img_div">
+                            <div class="ih_img_wrap"><a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" style="width:150px;height:110px" title="{$row['videoTitle']}"/></a></div>
+                            <div class="ih_lst_lnk"><a href="{$row['videoPlayUrl']}" target="_blank" >{$row['videoTitle']}<!--span class="ih_qikan">20120728期</span--></a></div>
+                        </div>
+                    </li>
+				{/loop}
+                </ul>
+            </div>
+            <a class="abtn aleft" href="#left">左移</a>
+            <a class="abtn aright" href="#right">右移</a>
+        </div>	
+    </div>
+	{/if}
+	 <!-- 乐酷 start -->
+
+ 	<div class="ih_btm">
+    		<div class="div_line ih_h_tj">
+            	<a class="here" href="###">首页推荐</a>
+            </div><div class="div_line ih_h_pd">
+            	<a href="###">频道</a>
+            </div><div class="div_line ih_h_zb">
+            	<a href="###">电视直播</a>
+            </div><div class="div_line ih_h_dds">
+            	<a href="###">我的大电视</a>
+            </div><div class="div_line ih_h_sz">
+            	<a href="###">设置</a>
+            </div>
+    </div>   
+</div>
+
+<script type="text/javascript">
+$(function(){
+	//一、左右切换：每次移动固定距离;
+	$(".productshow:eq(0)").Xslider({
+		unitdisplayed:3,
+		numtoMove:3,
+		scrollobjSize:Math.ceil($(".productshow:eq(0)").find("li").length/3)*486
+	});
+
+	$(".productshow:eq(1)").Xslider({
+		unitdisplayed:3,
+		numtoMove:3,
+		scrollobjSize:Math.ceil($(".productshow:eq(1)").find("li").length/3)*486
+	});
+
+	$(".productshow:eq(2)").Xslider({
+		unitdisplayed:3,
+		numtoMove:3,
+		scrollobjSize:Math.ceil($(".productshow:eq(2)").find("li").length/3)*486
+	});
+
+	$(".productshow:eq(3)").Xslider({
+		unitdisplayed:3,
+		numtoMove:3,
+		scrollobjSize:Math.ceil($(".productshow:eq(3)").find("li").length/3)*486
+	});
+
+	$(".productshow:eq(4)").Xslider({
+		unitdisplayed:3,
+		numtoMove:3,
+		scrollobjSize:Math.ceil($(".productshow:eq(4)").find("li").length/3)*486
+	});
+	
+	$("a").focus(function(){this.blur();});
+})
+</script>
+</body>
+</html>

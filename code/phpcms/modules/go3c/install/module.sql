@@ -1,0 +1,1 @@
+INSERT INTO `phpcms_module` (`module`, `name`, `url`, `iscore`, `version`, `description`, `setting`, `listorder`, `disabled`, `installdate`, `updatedate`) VALUES ('go3c', 'BigTV业务管理', 'go3c/', 0, '1.0', 'BigTV业务管理', '', 0, 0, '2012-10-20', '2012-10-20');

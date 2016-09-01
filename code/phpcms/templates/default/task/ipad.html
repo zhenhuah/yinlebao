@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ipad首页</title>
+<link rel="stylesheet" type="text/css" href="{TASK_PATH}ipad/css/css.css" />
+<script type="text/javascript" src="{TASK_PATH}js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="{TASK_PATH}js/Xslider.js"></script>
+</head>
+
+<body>
+<div class="pt_wrap">
+<!-- header start -->
+	<div class="pt_bar">
+    	<div class="pt_search"><input class="pt_s_txt" type="text" /></div>
+    	<div class="pt_logo"><img src="{TASK_PATH}ipad/images/pt_logo.png" /></div>
+    </div>
+    <!-- header end -->
+
+	<!-- 首页滚动 幻灯片效果 start -->
+	{if $pageNums > 0}
+    <div class="pt_tj">
+		<!-- 三个图组(一大两小图) start -->  
+		<!-- 第一组 start -->
+		{if $posidOne_data[1]}
+        <div class="pt_img_wrap div_line" id="imglist_page_1">
+        	<div class="div_line pt_img_1">
+            	<div class="pt_dslm"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dslm.png" /--></div>
+                <img src="{$posidOne_data[1][0]['videoImg']}" />
+            </div><div class="div_line">
+            	<div class="pt_img_2">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dsj.png" /--></div>
+                	<img src="{$posidOne_data[1][1]['videoImg']}" />
+                </div>
+                <div class="pt_img_3">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_blueray.png" /--></div>
+                	<img src="{$posidOne_data[1][2]['videoImg']}" />
+                </div>
+            </div>
+        </div>
+		{/if}
+
+		<!-- 第二组 start -->
+		{if $posidOne_data[2]}
+        <div class="pt_img_wrap div_line" id="imglist_page_2" style="display:none;">
+        	<div class="div_line pt_img_1">
+            	<div class="pt_dslm"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dslm.png" /--></div>
+                <img src="{$posidOne_data[2][0]['videoImg']}" />
+            </div><div class="div_line">
+            	<div class="pt_img_2">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dsj.png" /--></div>
+                	<img src="{$posidOne_data[2][1]['videoImg']}" />
+                </div>
+                <div class="pt_img_3">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_blueray.png" /--></div>
+                	<img src="{$posidOne_data[2][2]['videoImg']}" />
+                </div>
+            </div>
+        </div>
+		{/if}
+		<!-- 第三组 start -->
+		{if $posidOne_data[3]}
+        <div class="pt_img_wrap div_line" id="imglist_page_3" style="display:none;">
+        	<div class="div_line pt_img_1">
+            	<div class="pt_dslm"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dslm.png" /--></div>
+                <img src="{$posidOne_data[3][0]['videoImg']}" />
+            </div><div class="div_line">
+            	<div class="pt_img_2">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dsj.png" /--></div>
+                	<img src="{$posidOne_data[3][1]['videoImg']}" />
+                </div>
+                <div class="pt_img_3">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_blueray.png" /--></div>
+                	<img src="{$posidOne_data[3][2]['videoImg']}" />
+                </div>
+            </div>
+        </div>
+		{/if}
+
+		<!-- 第四组 start -->
+		{if $posidOne_data[4]}
+        <div class="pt_img_wrap div_line" id="imglist_page_4" style="display:none;">
+        	<div class="div_line pt_img_1">
+            	<div class="pt_dslm"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dslm.png" /--></div>
+                <img src="{$posidOne_data[4][0]['videoImg']}" />
+            </div><div class="div_line">
+            	<div class="pt_img_2">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dsj.png" /--></div>
+                	<img src="{$posidOne_data[4][1]['videoImg']}" />
+                </div>
+                <div class="pt_img_3">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_blueray.png" /--></div>
+                	<img src="{$posidOne_data[4][2]['videoImg']}" />
+                </div>
+            </div>
+        </div>
+		{/if}
+
+		<!-- 第五组 start -->
+		{if $posidOne_data[5]}
+        <div class="pt_img_wrap div_line" id="imglist_page_5" style="display:none;">
+        	<div class="div_line pt_img_1">
+            	<div class="pt_dslm"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dslm.png" /--></div>
+                <img src="{$posidOne_data[5][0]['videoImg']}" />
+            </div><div class="div_line">
+            	<div class="pt_img_2">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_dsj.png" /--></div>
+                	<img src="{$posidOne_data[5][1]['videoImg']}" />
+                </div>
+                <div class="pt_img_3">
+                	<div class="pt_dsj"><!--img src="{TASK_PATH}ipad/images/phl_hotc_blueray.png" /--></div>
+                	<img src="{$posidOne_data[5][2]['videoImg']}" />
+                </div>
+            </div>
+        </div>
+		{/if}
+		<!-- 三个图组(一大两小图) end -->
+		
+		<!-- right start -->
+		<div class="pt_txt_lst">
+			<!-- 第一组的标题 start -->
+			{if $posidOne_data[1]}
+        	<div class="pt_txt_cnt" id="title_page_1">
+				{loop $posidOne_data[1] $row}
+                <dl class="pt_txt_dl">
+                    <dt>{$row['videoTitle']}</dt>
+                    <dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/loop}
+				{if $posidOne_data[2][0]}
+                <dl class="pt_txt_dl">
+                    <dt>{$posidOne_data[2][0]['videoTitle']}</dt>
+					<dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/if}
+            </div>
+			{/if}
+			<!-- 第一组的标题 end -->
+
+			<!-- 第二组的标题 start -->
+			{if $posidOne_data[2]}
+        	<div class="pt_txt_cnt" id="title_page_2" style="display:none;">
+				{loop $posidOne_data[2] $row}
+                <dl class="pt_txt_dl">
+                    <dt>{$row['videoTitle']}</dt>
+                    <dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/loop}
+				{if $posidOne_data[3][0]}
+                <dl class="pt_txt_dl">
+                    <dt>{$posidOne_data[3][0]['videoTitle']}</dt>
+					<dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/if}
+            </div>
+			{/if}
+			<!-- 第二组的标题 end -->
+
+			<!-- 第三组的标题 start -->
+			{if $posidOne_data[3]}
+        	<div class="pt_txt_cnt" id="title_page_3" style="display:none;">
+				{loop $posidOne_data[3] $row}
+                <dl class="pt_txt_dl">
+                    <dt>{$row['videoTitle']}</dt>
+                    <dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/loop}
+				{if $posidOne_data[4][0]}
+                <dl class="pt_txt_dl">
+                    <dt>{$posidOne_data[4][0]['videoTitle']}</dt>
+					<dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/if}
+            </div>
+			{/if}
+			<!-- 第三组的标题 end -->
+
+			<!-- 第四组的标题 start -->
+			{if $posidOne_data[4]}
+        	<div class="pt_txt_cnt" id="title_page_4" style="display:none;">
+				{loop $posidOne_data[4] $row}
+                <dl class="pt_txt_dl">
+                    <dt>{$row['videoTitle']}</dt>
+                    <dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/loop}
+				{if $posidOne_data[5][0]}
+                <dl class="pt_txt_dl">
+                    <dt>{$posidOne_data[5][0]['videoTitle']}</dt>
+					<dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/if}
+            </div>
+			{/if}
+			<!-- 第四组的标题 end -->
+
+			<!-- 第五组的标题 start -->
+			{if $posidOne_data[5]}
+        	<div class="pt_txt_cnt" id="title_page_5" style="display:none;">
+				{loop $posidOne_data[5] $row}
+                <dl class="pt_txt_dl">
+                    <dt>{$row['videoTitle']}</dt>
+                    <dd>&nbsp;&nbsp;<!--尤小刚“秘史”系列巅峰之作--></dd>
+                </dl>
+				{/loop}
+            </div>
+			{/if}
+			<!-- 第五组的标题 end -->
+				<div class="pt_tab_quan">
+				{loop $posidOne_data $key $row}
+					<div class="div_line"><a href="###" id="{$key}" >{$key}</a></div>
+				{/loop}
+				<input type="hidden" name="current_page" id="current_page" value="1" />
+				<input type="hidden" name="isStart" id="isStart" value="0" />
+				<input type="hidden" name="current_page_max" id="current_page_max" value="{$pageNums}" />
+				</div>
+		</div>
+		<!-- right end -->
+    </div>	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(".pt_tab_quan a:first").addClass("here");
+		
+		$(".pt_tab_quan a").click(function(){
+			$(".pt_tab_quan a").removeClass("here");	//焦点样式移除			
+
+			//图 start
+			$(".pt_img_wrap").hide();
+			$("#imglist_page_"+this.id).show();
+			//图 end
+			//右部文字标题处理 start
+			$(".pt_txt_cnt").hide();
+			$("#title_page_"+this.id).show();
+			//右部文字标题处理 end
+
+			if (this.id == '1')
+			{
+				var next_page = 2 ;
+			}else{
+				var next_page = parseInt(this.id)+1;
+			}
+
+			//是否是最后一个了
+			var current_page_max = $('#current_page_max').val();	//最后一组
+			if (next_page > current_page_max)
+			{
+				var next_page = 1;
+			}
+			
+			$('#current_page').val(next_page);	//设置下一页分页数
+			$(this).toggleClass("here");	//重新设置当前焦点样式
+		});
+		
+	});
+	function vieImg()
+	{
+		var current_page = $('#current_page').val();	//第一组
+		var isStart = $('#isStart').val();	//是否开始
+		var current_page_max = $('#current_page_max').val();	//最后一组
+		if (current_page_max > 0)
+		{		
+			if (current_page == '1')
+			{
+				var next_page = 2 ;
+			}else{
+				var next_page = parseInt(current_page)+1;
+			}
+			
+			//是否是最后一个了
+			if (next_page > current_page_max)
+			{
+				var next_page = 1;
+			}
+			
+			if (isStart == '0')	//第一次不执行
+			{
+				$('#isStart').val('1');	//是否开始
+			}else{		
+				$(".pt_tab_quan a").removeClass("here");	//焦点样式移除	
+				$('#'+next_page).addClass("here");			//重新设置当前焦点样式
+
+				//图 start
+				$(".pt_img_wrap").hide();
+				$("#imglist_page_"+next_page).show();
+				//图 end
+
+				//右部文字标题处理 start
+				$(".pt_txt_cnt").hide();
+				$("#title_page_"+next_page).show();
+				//右部文字标题处理 end
+				
+				$('#current_page').val(next_page);	//设置当前分页数
+
+				$('#'+current_page).removeClass("here");	//去掉焦点样式
+				$('#'+next_page).addClass("here");	//重新设置当前焦点样式
+			}
+
+			window.setTimeout("vieImg()", '6000')
+		}
+	}
+	vieImg();	
+	</script>
+	{/if}
+   <!-- 首页滚动 幻灯片效果 end -->
+    
+<!-- 今日更新 start -->
+{if $videoTask['posidThree']}
+  <div class="ih_lst">
+		<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}ipad/images/phl_jrgx_text.png" /></div><!--
+            --><div class="div_line ih_hot_text">
+                <marquee scrollamount="3">
+                <div class="ih_hot_cnt">
+                    <div class="div_line ih_tv_logo"><img src="{TASK_PATH}ipad/images/ih_cctv7.png" /></div>
+                    <div class="div_line marR20">09:00 女排半决赛 日本VS中国<a href="#" class="marL16">点击查看</a></div>
+                    <div class="div_line ih_tv_logo"><img src="{TASK_PATH}ipad/images/ih_cctv7.png" /></div>
+                    <div class="div_line marR20">09:00 女排半决赛 日本VS中国<a href="#" class="marL16">点击查看</a></div>
+                </div>
+                </marquee>
+            </div>
+      </div>
+      
+      <div class="productshow" style="clear:both;">
+          <div class="scrollcontainer clearfix">
+              <ul>
+			  {loop $videoTask['posidThree'] $row}
+                  <li>
+                      <div class="div_line ih_img_div">
+                          <div class="ih_img_wrap">
+                          <!--div class="ip_qk">20120728期</div-->
+                          <a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" title="{$row['videoTitle']}" style="width:150px;height:110px"/></a>
+                          </div>
+                          <div class="ih_lst_lnk"><a  href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">电视谈话性娱乐节目</span--></a></div>
+                      </div>
+                  </li>
+				{/loop}
+              </ul>
+          </div>
+          <a class="abtn aleft" href="#left">左移</a>
+          <a class="abtn aright" href="#right">右移</a>
+      </div>
+    </div>
+{/if}
+<!-- 今日更新 end --> 
+    
+<!-- 电视栏目 start -->
+{if $videoTask['posidFour']}
+    <div class="ih_lst2">
+   	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}ipad/images/phl_dslm_text.png" /></div><div class="div_line ih_hot_text">
+                <marquee scrollamount="3">
+                <div class="ih_hot_cnt">
+                    <div class="div_line ih_tv_logo"><img src="{TASK_PATH}ipad/images/ih_cctv7.png" /></div>
+                    <div class="div_line marR20">09:00 女排半决赛 日本VS中国<a href="#" class="marL16">点击查看</a></div>
+                    <div class="div_line ih_tv_logo"><img src="{TASK_PATH}ipad/images/ih_cctv7.png" /></div>
+                    <div class="div_line marR20">09:00 女排半决赛 日本VS中国<a href="#" class="marL16">点击查看</a></div>
+                </div>
+                </marquee>
+            </div>
+      </div>
+        
+      <div class="productshow" style="clear:both;">
+          <div class="scrollcontainer clearfix">
+              <ul>
+                 {loop $videoTask['posidFour'] $row}
+                  <li>
+                      <div class="div_line ih_img_div">
+                          <div class="ih_img_wrap">
+                          <!--div class="ip_qk">20120728期</div-->
+                          <a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" title="{$row['videoTitle']}" style="width:150px;height:110px"/></a>
+                          </div>
+                          <div class="ih_lst_lnk"><a  href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">电视谈话性娱乐节目</span--></a></div>
+                      </div>
+                  </li>
+				{/loop}
+              </ul>
+          </div>
+          <a class="abtn aleft" href="#left">左移</a>
+          <a class="abtn aright" href="#right">右移</a>
+      </div>
+    </div>
+{/if}
+<!-- 电视栏目 end -->
+
+<!-- 电影 start -->
+{if $videoTask['posidFive']}
+    <div class="ih_lst2">
+   	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}ipad/images/phl_dy_text.png" /></div><!--
+            --><div class="div_line ih_ad_txt">百家电视台直播，视频热站全搜罗</div>
+      </div>
+        
+      <div class="productshow" style="clear:both;">
+          <div class="scrollcontainer clearfix">
+              <ul>
+                  {loop $videoTask['posidFive'] $row}
+                  <li>
+                      <div class="div_line ih_img_div">
+                          <div class="ih_img_wrap">
+                          <!--div class="ip_qk">20120728期</div-->
+                          <a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" title="{$row['videoTitle']}" style="width:150px;height:110px"/></a>
+                          </div>
+                          <div class="ih_lst_lnk"><a  href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">电视谈话性娱乐节目</span--></a></div>
+                      </div>
+                  </li>
+				{/loop}
+              </ul>
+          </div>
+          <a class="abtn aleft" href="#left">左移</a>
+          <a class="abtn aright" href="#right">右移</a>
+      </div>
+    </div>
+{/if}
+<!-- 电影 end -->
+
+<!-- 电视剧 start -->
+{if $videoTask['posidSix']}
+    <div class="ih_lst2">
+   	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}ipad/images/phl_dsj_text.png" /></div><!--
+            --><div class="div_line ih_hot_text">
+                <marquee scrollamount="3">
+                <div class="ih_hot_cnt">
+                    <div class="div_line ih_tv_logo"><img src="{TASK_PATH}ipad/images/ih_cctv7.png" /></div>
+                    <div class="div_line marR20">09:00 女排半决赛 日本VS中国<a href="#" class="marL16">点击查看</a></div>
+                    <div class="div_line ih_tv_logo"><img src="{TASK_PATH}ipad/images/ih_cctv7.png" /></div>
+                    <div class="div_line marR20">09:00 女排半决赛 日本VS中国<a href="#" class="marL16">点击查看</a></div>
+                </div>
+                </marquee>
+            </div>
+      </div>
+        
+      <div class="productshow" style="clear:both;">
+          <div class="scrollcontainer clearfix">
+              <ul>
+                  {loop $videoTask['posidSix'] $row}
+                  <li>
+                      <div class="div_line ih_img_div">
+                          <div class="ih_img_wrap">
+                          <!--div class="ip_qk">20120728期</div-->
+                          <a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" title="{$row['videoTitle']}" style="width:150px;height:110px"/></a>
+                          </div>
+                          <div class="ih_lst_lnk"><a  href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">电视谈话性娱乐节目</span--></a></div>
+                      </div>
+                  </li>
+				{/loop}
+              </ul>
+          </div>
+          <a class="abtn aleft" href="#left">左移</a>
+          <a class="abtn aright" href="#right">右移</a>
+      </div>
+    </div>
+{/if}
+<!-- 电视剧 start -->
+
+<!-- 乐酷 start -->
+{if $videoTask['posidSeven']}
+    <div class="ih_lst2">
+   	<div class="ih_lst_t">
+        	<div class="div_line ih_lst_t_txt"><img src="{TASK_PATH}ipad/images/phl_leku_text.png" /></div><!--
+            --><div class="div_line ih_hot_text">
+                <marquee scrollamount="3">
+                <div class="ih_hot_cnt">
+                    <div class="div_line ih_tv_logo"><img src="{TASK_PATH}ipad/images/ih_cctv7.png" /></div>
+                    <div class="div_line marR20">09:00 女排半决赛 日本VS中国<a href="#" class="marL16">点击查看</a></div>
+                    <div class="div_line ih_tv_logo"><img src="{TASK_PATH}ipad/images/ih_cctv7.png" /></div>
+                    <div class="div_line marR20">09:00 女排半决赛 日本VS中国<a href="#" class="marL16">点击查看</a></div>
+                </div>
+                </marquee>
+            </div>
+      </div>
+        
+      <div class="productshow" style="clear:both;">
+          <div class="scrollcontainer clearfix">
+              <ul>
+                 {loop $videoTask['posidSeven'] $row}
+                  <li>
+                      <div class="div_line ih_img_div">
+                          <div class="ih_img_wrap">
+                          <!--div class="ip_qk">20120728期</div-->
+                          <a href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}"><img src="{$row['videoImg']}" title="{$row['videoTitle']}" style="width:150px;height:110px"/></a>
+                          </div>
+                          <div class="ih_lst_lnk"><a  href="{$row['videoPlayUrl']}" target="_blank" title="{$row['videoTitle']}">{$row['videoTitle']}<!--span class="ih_qikan">电视谈话性娱乐节目</span--></a></div>
+                      </div>
+                  </li>
+				{/loop}
+              </ul>
+          </div>
+          <a class="abtn aleft" href="#left">左移</a>
+          <a class="abtn aright" href="#right">右移</a>
+      </div>
+    </div>
+{/if}
+<!-- 乐酷 end -->
+
+<!-- footer start -->
+    <div class="ip_btm">
+    		<div class="div_line ip_h_tj">
+            	<a class="here" href="#">首页推荐</a>
+            </div><div class="div_line ip_h_dszb">
+            	<a href="#">电视直播</a>
+            </div><div class="div_line ip_h_dslm">
+            	<a href="#">电视栏目</a>
+            </div><div class="div_line ip_h_dsj">
+            	<a href="#">电视剧</a>
+            </div><div class="div_line ip_h_dy">
+            	<a href="#">电影</a>
+            </div>
+            <!--
+            --><div class="div_line ip_h_lk">
+            	<a href="#">乐酷</a>
+            </div><!--
+            --><div class="div_line ip_h_my">
+            	<a href="#">我的大电视</a>
+            </div><!--
+            --><div class="div_line ip_h_sz" style="margin-right:0;">
+            	<a href="#">设置</a>
+            </div>
+    </div>
+    <!-- footer end -->
+</div>
+
+<script type="text/javascript">
+$(function(){	
+	$(".productshow:eq(0)").Xslider({
+		unitdisplayed:1,
+		numtoMove:1
+	});
+	
+	$(".productshow:eq(1)").Xslider({
+		unitdisplayed:1,
+		numtoMove:1
+	});
+	
+	$(".productshow:eq(2)").Xslider({
+		unitdisplayed:1,
+		numtoMove:1
+	});
+	
+	$(".productshow:eq(3)").Xslider({
+		unitdisplayed:1,
+		numtoMove:1
+	});
+	
+	$(".productshow:eq(4)").Xslider({
+		unitdisplayed:1,
+		numtoMove:1
+	});
+	
+	$(".productshow:eq(5)").Xslider({
+		unitdisplayed:1,
+		numtoMove:1
+	});
+	
+	$("a").focus(function(){this.blur();});
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<?php return array (
+  '__ex__' => 1395215139,
+  'data' => 
+  array (
+    'type' => 
+    array (
+      0 => 
+      array (
+        'name' => '电影',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/letv/channel/movie/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+      1 => 
+      array (
+        'name' => '电视剧',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/letv/channel/tv/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+      2 => 
+      array (
+        'name' => '动漫',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/letv/channel/comic/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+      3 => 
+      array (
+        'name' => '体育',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/letv/channel/sports/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+    ),
+    'cate' => 
+    array (
+      0 => 
+      array (
+        't' => 
+        array (
+          'name' => '电影',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/letv/channel/movie/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '最新',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E6%259C%2580%25E6%2596%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '最热',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E6%259C%2580%25E7%2583%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '剧情',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E5%2589%25A7%25E6%2583%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '动作',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E5%258A%25A8%25E4%25BD%259C/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '喜剧',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E5%2596%259C%25E5%2589%25A7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '爱情',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E7%2588%25B1%25E6%2583%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '犯罪',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E7%258A%25AF%25E7%25BD%25AA/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '悬疑',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E6%2582%25AC%25E7%2596%2591/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '科幻',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E7%25A7%2591%25E5%25B9%25BB/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          9 => 
+          array (
+            'name' => '魔幻',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E9%25AD%2594%25E5%25B9%25BB/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          10 => 
+          array (
+            'name' => '灾难',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E7%2581%25BE%25E9%259A%25BE/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          11 => 
+          array (
+            'name' => '家庭',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E5%25AE%25B6%25E5%25BA%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          12 => 
+          array (
+            'name' => '内地',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E5%2586%2585%25E5%259C%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          13 => 
+          array (
+            'name' => '美国',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E7%25BE%258E%25E5%259B%25BD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          14 => 
+          array (
+            'name' => '香港',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E9%25A6%2599%25E6%25B8%25AF/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          15 => 
+          array (
+            'name' => '台湾',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E5%258F%25B0%25E6%25B9%25BE/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          16 => 
+          array (
+            'name' => '韩国',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/%25E9%259F%25A9%25E5%259B%25BD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          17 => 
+          array (
+            'name' => '2013',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/2013/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          18 => 
+          array (
+            'name' => '2012',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/2012/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          19 => 
+          array (
+            'name' => '2011',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/2011/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          20 => 
+          array (
+            'name' => '2010',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/movie/category/2010/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+      1 => 
+      array (
+        't' => 
+        array (
+          'name' => '电视剧',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/letv/channel/tv/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '最新',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E6%259C%2580%25E6%2596%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '高清',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E9%25AB%2598%25E6%25B8%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '剧情',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%2589%25A7%25E6%2583%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '伦理',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E4%25BC%25A6%25E7%2590%2586/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '喜剧',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%2596%259C%25E5%2589%25A7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '军旅',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%2586%259B%25E6%2597%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '奇幻',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%25A5%2587%25E5%25B9%25BB/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '动作',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%258A%25A8%25E4%25BD%259C/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '战争',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E6%2588%2598%25E4%25BA%2589/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          9 => 
+          array (
+            'name' => '武侠',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E6%25AD%25A6%25E4%25BE%25A0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          10 => 
+          array (
+            'name' => '犯罪',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E7%258A%25AF%25E7%25BD%25AA/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          11 => 
+          array (
+            'name' => '悬疑',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E6%2582%25AC%25E7%2596%2591/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          12 => 
+          array (
+            'name' => '偶像',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%2581%25B6%25E5%2583%258F/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          13 => 
+          array (
+            'name' => '都市',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E9%2583%25BD%25E5%25B8%2582/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          14 => 
+          array (
+            'name' => '历史',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%258E%2586%25E5%258F%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          15 => 
+          array (
+            'name' => '古装',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%258F%25A4%25E8%25A3%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          16 => 
+          array (
+            'name' => '科幻',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E7%25A7%2591%25E5%25B9%25BB/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          17 => 
+          array (
+            'name' => '家庭',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%25AE%25B6%25E5%25BA%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          18 => 
+          array (
+            'name' => '大陆',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%25A4%25A7%25E9%2599%2586/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          19 => 
+          array (
+            'name' => '香港',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E9%25A6%2599%25E6%25B8%25AF/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          20 => 
+          array (
+            'name' => '韩国',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E9%259F%25A9%25E5%259B%25BD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          21 => 
+          array (
+            'name' => '台湾',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E5%258F%25B0%25E6%25B9%25BE/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          22 => 
+          array (
+            'name' => '美国',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/%25E7%25BE%258E%25E5%259B%25BD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          23 => 
+          array (
+            'name' => '2013',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/2013/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          24 => 
+          array (
+            'name' => '2012',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/2012/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          25 => 
+          array (
+            'name' => '2011',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/2011/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          26 => 
+          array (
+            'name' => '2010',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/tv/category/2010/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+      2 => 
+      array (
+        't' => 
+        array (
+          'name' => '动漫',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/letv/channel/comic/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '最新',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/%25E6%259C%2580%25E6%2596%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '6岁以下',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/6%25E5%25B2%2581%25E4%25BB%25A5%25E4%25B8%258B/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '6-12岁',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/6-12%25E5%25B2%2581/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '12-18岁',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/12-18%25E5%25B2%2581/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '18岁以上',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/18%25E5%25B2%2581%25E4%25BB%25A5%25E4%25B8%258A/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '2014',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/2014/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '2013',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/2013/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '2012',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/2012/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '2011',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/comic/category/2011/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+      3 => 
+      array (
+        't' => 
+        array (
+          'name' => '体育',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/letv/channel/sports/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '最新',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E6%259C%2580%25E6%2596%25B0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '战报',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E6%2588%2598%25E6%258A%25A5/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '录播',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E5%25BD%2595%25E6%2592%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '访谈',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E8%25AE%25BF%25E8%25B0%2588/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '英超',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E8%258B%25B1%25E8%25B6%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '西甲',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E8%25A5%25BF%25E7%2594%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '意甲',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E6%2584%258F%25E7%2594%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '法甲',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E6%25B3%2595%25E7%2594%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '德甲',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E5%25BE%25B7%25E7%2594%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          9 => 
+          array (
+            'name' => '欧冠',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E6%25AC%25A7%25E5%2586%25A0/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          10 => 
+          array (
+            'name' => '中超',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E4%25B8%25AD%25E8%25B6%2585/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          11 => 
+          array (
+            'name' => '国足',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E5%259B%25BD%25E8%25B6%25B3/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          12 => 
+          array (
+            'name' => 'NBA',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/NBA/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          13 => 
+          array (
+            'name' => 'CBA',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/CBA/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          14 => 
+          array (
+            'name' => '网球',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E7%25BD%2591%25E7%2590%2583/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          15 => 
+          array (
+            'name' => '台球',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/letv/channel/sports/category/%25E5%258F%25B0%25E7%2590%2583/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+    ),
+  ),
+);

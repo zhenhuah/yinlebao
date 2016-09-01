@@ -1,0 +1,53 @@
+button.create,
+	div.panel {
+		position: relative;
+		box-sizing: border-box;
+		float: left;
+		width: 23%;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		background-color: #eee;
+		min-height: 105px;
+		padding: 5px;
+		margin: 1em 2% 0 0;
+	}
+
+	button.create:hover {
+		background-color: #ddd;
+	}
+
+	div.panel i.edit,
+	div.panel i.remove {
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+		color: #999;
+	}
+
+	div.panel i.remove {
+		right: 25px;
+	}
+
+	div.panel i.edit:hover,
+	div.panel i.remove:hover {
+		color: black;
+	}
+
+	div.panel dl {
+		margin: 0;
+	}
+
+	div.panel dt {
+		clear: both;
+		float: left;
+		width: 33%;
+		padding-left: 2%;
+		margin: 0;
+		color: #999;
+	}
+
+	div.panel dd {
+		float: left;
+		width: 65%;
+		margin: 0;
+	}

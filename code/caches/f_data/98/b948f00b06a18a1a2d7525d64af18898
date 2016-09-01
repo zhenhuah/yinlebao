@@ -1,0 +1,165 @@
+<?php return array (
+  '__ex__' => 1399893427,
+  'data' => 
+  array (
+    'type' => 
+    array (
+      0 => 
+      array (
+        'name' => '影视',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/shafa/channel/video/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+      1 => 
+      array (
+        'name' => '游戏',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/shafa/channel/game/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+      2 => 
+      array (
+        'name' => '软件',
+        'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/shafa/channel/app/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+      ),
+    ),
+    'cate' => 
+    array (
+      0 => 
+      array (
+        't' => 
+        array (
+          'name' => '影视',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/shafa/channel/video/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '点播',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/video/category/%25E7%2582%25B9%25E6%2592%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '直播',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/video/category/%25E7%259B%25B4%25E6%2592%25AD/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '聚合',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/video/category/%25E8%2581%259A%25E5%2590%2588/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+      1 => 
+      array (
+        't' => 
+        array (
+          'name' => '游戏',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/shafa/channel/game/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '模拟器',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E6%25A8%25A1%25E6%258B%259F%25E5%2599%25A8/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '动作冒险',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E5%258A%25A8%25E4%25BD%259C%25E5%2586%2592%25E9%2599%25A9/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '角色扮演',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E8%25A7%2592%25E8%2589%25B2%25E6%2589%25AE%25E6%25BC%2594/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '竞速体育',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E7%25AB%259E%25E9%2580%259F%25E4%25BD%2593%25E8%2582%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '益智休闲',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E7%259B%258A%25E6%2599%25BA%25E4%25BC%2591%25E9%2597%25B2/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '棋牌游戏',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E6%25A3%258B%25E7%2589%258C%25E6%25B8%25B8%25E6%2588%258F/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '飞行射击',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E9%25A3%259E%25E8%25A1%258C%25E5%25B0%2584%25E5%2587%25BB/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '经营策略',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E7%25BB%258F%25E8%2590%25A5%25E7%25AD%2596%25E7%2595%25A5/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '网络游戏',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/game/category/%25E7%25BD%2591%25E7%25BB%259C%25E6%25B8%25B8%25E6%2588%258F/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+      2 => 
+      array (
+        't' => 
+        array (
+          'name' => '软件',
+          'url' => 'http://tv4.hdpfans.com/~rss.get.category/site/shafa/channel/app/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+        ),
+        'l' => 
+        array (
+          0 => 
+          array (
+            'name' => '影音图像',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E5%25BD%25B1%25E9%259F%25B3%25E5%259B%25BE%25E5%2583%258F/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          1 => 
+          array (
+            'name' => '网络社交',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E7%25BD%2591%25E7%25BB%259C%25E7%25A4%25BE%25E4%25BA%25A4/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          2 => 
+          array (
+            'name' => '系统工具',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E7%25B3%25BB%25E7%25BB%259F%25E5%25B7%25A5%25E5%2585%25B7/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          3 => 
+          array (
+            'name' => '桌面主题',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E6%25A1%258C%25E9%259D%25A2%25E4%25B8%25BB%25E9%25A2%2598/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          4 => 
+          array (
+            'name' => '阅读图书',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E9%2598%2585%25E8%25AF%25BB%25E5%259B%25BE%25E4%25B9%25A6/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          5 => 
+          array (
+            'name' => '旅行地图',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E6%2597%2585%25E8%25A1%258C%25E5%259C%25B0%25E5%259B%25BE/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          6 => 
+          array (
+            'name' => '新闻资讯',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E6%2596%25B0%25E9%2597%25BB%25E8%25B5%2584%25E8%25AE%25AF/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          7 => 
+          array (
+            'name' => '办公财经',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E5%258A%259E%25E5%2585%25AC%25E8%25B4%25A2%25E7%25BB%258F/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+          8 => 
+          array (
+            'name' => '生活购物',
+            'url' => 'http://tv4.hdpfans.com/~rss.get.film_xml/site/shafa/channel/app/category/%25E7%2594%259F%25E6%25B4%25BB%25E8%25B4%25AD%25E7%2589%25A9/rss/1/xml/1/ajax/1/key/ba3cd61e4953cecff627b1401588fb1e',
+          ),
+        ),
+      ),
+    ),
+  ),
+);
